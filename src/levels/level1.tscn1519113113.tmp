@@ -5,7 +5,6 @@
 [ext_resource type="Script" uid="uid://yyfdpisdfsgv" path="res://src/tilemap/tilemap.gd" id="3_feg4a"]
 [ext_resource type="PackedScene" uid="uid://c6ixj0c287w2e" path="res://src/objects/box.tscn" id="4_ih7hf"]
 [ext_resource type="PackedScene" uid="uid://bwsnx88dd2pws" path="res://src/objects/heavy_box.tscn" id="5_ghtb1"]
-[ext_resource type="PackedScene" uid="uid://d3wcs6il2qtfn" path="res://src/objects/fagile_box.tscn" id="6_bn18y"]
 
 [node name="Level" type="Node2D" unique_id=300137770]
 
@@ -32,7 +31,6 @@ script = ExtResource("3_feg4a")
 
 [node name="Player" parent="." unique_id=2070835607 instance=ExtResource("3_ay5hh")]
 position = Vector2(-216, 8)
-is_pushable = false
 
 [node name="Objects" type="Node2D" parent="." unique_id=714592590]
 
@@ -45,7 +43,4 @@ position = Vector2(-184, 8)
 position = Vector2(-184, -24)
 
 [node name="Box3" parent="Objects/Baggage" unique_id=894884769 instance=ExtResource("5_ghtb1")]
-position = Vector2(-168, 8)
-
-[node name="Box4" parent="Objects/Baggage" unique_id=160660457 instance=ExtResource("6_bn18y")]
-position = Vector2(-152, 8)
+position = Vector2(-168, -8)
