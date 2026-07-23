@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dr6t2hxva1ip8"]
+
+[ext_resource type="Script" uid="uid://c6ty1jyojvgy3" path="res://src/global.gd" id="1_kfmdv"]
+[ext_resource type="Shader" uid="uid://3bi8ttk0oxhe" path="res://src/camera/subpixel.gdshader" id="1_m7a4q"]
+[ext_resource type="PackedScene" uid="uid://b5xugfhxsekkf" path="res://src/camera/player_camera.tscn" id="2_kfmdv"]
+[ext_resource type="TileSet" uid="uid://c430phlsddfjk" path="res://src/tilemap/carriage_tileset.tres" id="3_m7a4q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pribe"]
+shader = ExtResource("1_m7a4q")
+shader_parameter/cam_offset = Vector2(0, 0)
+
+[node name="Root" type="Node2D" unique_id=30303888]
+texture_filter = 1
+script = ExtResource("1_kfmdv")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1965441994]
+material = SubResource("ShaderMaterial_pribe")
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 316.0
+offset_bottom = 176.0
+scale = Vector2(6, 6)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=131734904]
+handle_input_locally = false
+size = Vector2i(322, 182)
+render_target_update_mode = 4
+
+[node name="GlobalTilemap" type="TileMapLayer" parent="SubViewportContainer/SubViewport" unique_id=787323896]
+tile_set = ExtResource("3_m7a4q")
+
+[node name="LevelContainer" type="Node" parent="SubViewportContainer/SubViewport" unique_id=799448590]
+
+[node name="PlayerCamera" parent="SubViewportContainer/SubViewport" unique_id=1971294424 instance=ExtResource("2_kfmdv")]

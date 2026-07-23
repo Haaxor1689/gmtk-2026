@@ -1,0 +1,30 @@
+[gd_resource type="TileSet" format=3 uid="uid://c430phlsddfjk"]
+
+[ext_resource type="Texture2D" uid="uid://emwq3bat4bkd" path="res://assets/tilemap.png" id="1_l70hk"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_feg4a"]
+tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 1)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feg4a"]
+texture = ExtResource("1_l70hk")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+
+[resource]
+sources/2 = SubResource("TileSetAtlasSource_feg4a")
+pattern_0 = SubResource("TileMapPattern_feg4a")
