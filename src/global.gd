@@ -24,7 +24,7 @@ func align_to_grid(node: GridNode) -> void:
 	node.update_z_index()
 	print("Aligned ", node.name, " to grid at ", cell)
 
-func try_move(node: GridNode, direction: Vector2, animate: bool = false) -> bool:
+func try_move(node: GridNode, direction: Vector2, is_push: bool = false) -> bool:
 	var new_position := node.grid_pos + direction
 
 	for t in tilemaps:
@@ -34,7 +34,7 @@ func try_move(node: GridNode, direction: Vector2, animate: bool = false) -> bool
 
 	for obj in objects:
 		if obj.grid_pos == new_position:
-			if obj.is_pushable and Global.try_move(obj, direction, true):
+			if obj.is_pushable and !is_push and Global.try_move(obj, direction, true):
 				return true
 			else:
 				return false
@@ -43,11 +43,6 @@ func try_move(node: GridNode, direction: Vector2, animate: bool = false) -> bool
 	var target_position := tilemap.to_global(local_center)
 
 	node.grid_pos = new_position
-
-	if not animate:
-		node.global_position = target_position
-		node.update_z_index()
-		return true
 
 	# Kill any existing tween
 	if node.get_meta("move_tween", []).size() > 0:
