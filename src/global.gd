@@ -36,7 +36,7 @@ func try_move(node: GridNode, direction: Vector2) -> bool:
 	node.grid_pos = new_position
 
 	# Kill any existing tween
-	if node.get_meta("move_tween") && node.get_meta("move_tween").size() > 0:
+	if node.get_meta("move_tween", []).size() > 0:
 		for t in node.get_meta("move_tween"):
 			t.kill()
 
