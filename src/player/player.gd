@@ -10,7 +10,7 @@ var inputs = {
 func _unhandled_input(event: InputEvent) -> void:
   for dir in inputs.keys():
     if event.is_action_pressed(dir):
-      Global.try_move(self, inputs[dir])
+      Global.try_move(self, inputs[dir], true)
 
 func _ready() -> void:
   super._ready()
