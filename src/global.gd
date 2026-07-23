@@ -9,6 +9,7 @@ var player: GridNode
 var current_level: Node = null
 
 const TILE_SIZE: int = 16
+const GRID_NODE_BASE_Z_INDEX: int = 50
 
 var tilemaps: Array[TileMapLayer] = []
 
@@ -20,6 +21,7 @@ func align_to_grid(node: GridNode) -> void:
 	var local_center := tilemap.map_to_local(cell)
 	node.global_position = tilemap.to_global(local_center)
 	node.grid_pos = cell
+	node.update_z_index()
 	print("Aligned ", node.name, " to grid at ", cell)
 
 func try_move(node: GridNode, direction: Vector2, animate: bool = false) -> bool:
@@ -44,6 +46,7 @@ func try_move(node: GridNode, direction: Vector2, animate: bool = false) -> bool
 
 	if not animate:
 		node.global_position = target_position
+		node.update_z_index()
 		return true
 
 	# Kill any existing tween
@@ -72,6 +75,7 @@ func try_move(node: GridNode, direction: Vector2, animate: bool = false) -> bool
 			var arc_height := sin(t * PI) * 6.0 # Small upward arc, 10 pixels max
 			node.global_position = horizontal + Vector2(0, -arc_height)
 	, 0.0, 1.0, 0.3)
+	tween.tween_callback(node.update_z_index)
 
 	# Scale: expand for first 0.15s, then reverse for next 0.15s
 	scale_tween.tween_property(node, "scale", Vector2(0.9, 1.1), 0.15)
