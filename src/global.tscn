@@ -10,7 +10,6 @@ shader = ExtResource("1_m7a4q")
 shader_parameter/cam_offset = Vector2(0, 0)
 
 [node name="Root" type="Node2D" unique_id=30303888]
-texture_filter = 1
 script = ExtResource("1_kfmdv")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1965441994]

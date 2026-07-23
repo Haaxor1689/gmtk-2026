@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://jn1poq1slkun" path="res://assets/player.png" id="2_mf2ua"]
 
 [node name="Player" type="Node2D" unique_id=2070835607]
-texture_filter = 1
 script = ExtResource("1_rxibo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1003064723]

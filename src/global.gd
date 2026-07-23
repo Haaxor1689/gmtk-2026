@@ -30,6 +30,13 @@ func try_move(node: GridNode, direction: Vector2, animate: bool = false) -> bool
 			if t.get_cell_source_id(new_position) != -1:
 				return false
 
+	for obj in objects:
+		if obj.grid_pos == new_position:
+			if obj.is_pushable and Global.try_move(obj, direction, true):
+				return true
+			else:
+				return false
+
 	var local_center := tilemap.map_to_local(new_position)
 	var target_position := tilemap.to_global(local_center)
 
