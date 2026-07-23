@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d3wcs6il2qtfn"]
+
+[ext_resource type="Script" uid="uid://d2sw1a8mwu3p2" path="res://src/grid_node.gd" id="1_jqh4p"]
+[ext_resource type="Texture2D" uid="uid://555x5454yekq" path="res://assets/box_fragile.png" id="2_jqh4p"]
+[ext_resource type="Texture2D" uid="uid://bgy2nwn1yfa5b" path="res://assets/box_fragile_broken.png" id="2_qxrt8"]
+
+[node name="Box" type="Node2D" unique_id=1172009491]
+script = ExtResource("1_jqh4p")
+is_pushable = true
+metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
+
+[node name="Sprite2D_broken" type="Sprite2D" parent="." unique_id=1320660689]
+position = Vector2(0, -5)
+texture = ExtResource("2_qxrt8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510078233]
+position = Vector2(0, -5)
+texture = ExtResource("2_jqh4p")
