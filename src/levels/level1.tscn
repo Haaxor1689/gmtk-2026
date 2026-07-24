@@ -6,7 +6,8 @@
 [ext_resource type="Script" uid="uid://yyfdpisdfsgv" path="res://src/tilemap/tilemap.gd" id="3_feg4a"]
 [ext_resource type="PackedScene" uid="uid://c6ixj0c287w2e" path="res://src/objects/box.tscn" id="4_ih7hf"]
 [ext_resource type="PackedScene" uid="uid://bwsnx88dd2pws" path="res://src/objects/heavy_box.tscn" id="5_ghtb1"]
-[ext_resource type="PackedScene" uid="uid://d3wcs6il2qtfn" path="res://src/objects/fagile_box.tscn" id="6_bn18y"]
+[ext_resource type="PackedScene" uid="uid://d3wcs6il2qtfn" path="res://src/objects/fragile_box.tscn" id="6_bn18y"]
+[ext_resource type="PackedScene" uid="uid://d1lhydxk7ubma" path="res://src/objects/refuel_station.tscn" id="8_ou3gi"]
 
 [node name="Level" type="Node2D" unique_id=300137770]
 
@@ -50,4 +51,7 @@ position = Vector2(-232, -40)
 position = Vector2(-136, -40)
 
 [node name="Box4" parent="Objects/Baggage" unique_id=160660457 instance=ExtResource("6_bn18y")]
-position = Vector2(-120, -40)
+position = Vector2(-104, -24)
+
+[node name="RefuelStation" parent="Objects" unique_id=1130668928 instance=ExtResource("8_ou3gi")]
+position = Vector2(-72, -40)
