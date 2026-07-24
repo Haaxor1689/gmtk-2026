@@ -31,19 +31,19 @@ func try_move(node: GridNode, direction: Vector2, is_push: bool = false) -> floa
 	for t in tilemaps:
 		if t.is_collidable:
 			if t.get_cell_source_id(new_position) != -1:
-				return 1.0*leak_modifier
+				return 1.0 * leak_modifier
 
 	for obj in objects:
 		if obj.grid_pos == new_position:
 			if obj.is_pushable and !is_push and Global.try_move(obj, direction, true):
-				return obj.push_cost*leak_modifier
+				return obj.push_cost * leak_modifier
 			else:
-				return 1.0*leak_modifier
+				return 1.0 * leak_modifier
 
 	var local_center := tilemap.map_to_local(new_position)
 	var target_position := tilemap.to_global(local_center)
 
-	node.grid_pos = new_position*leak_modifier
+	node.grid_pos = new_position * leak_modifier
 
 	# Kill any existing tween
 	if node.get_meta("move_tween", []).size() > 0:
@@ -78,7 +78,7 @@ func try_move(node: GridNode, direction: Vector2, is_push: bool = false) -> floa
 	scale_tween.tween_property(node, "scale", Vector2.ONE, 0.15)
 
 	print("Moved to: ", new_position)
-	return 1.0*leak_modifier
+	return 1.0 * leak_modifier
 
 func change_level(new_level: PackedScene) -> void:
 	if current_level:

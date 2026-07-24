@@ -2,7 +2,6 @@ extends TileMapLayer
 
 @export var is_collidable: bool = false
 
-
 func _ready() -> void:
 	Global.tilemaps.append(self)
 
