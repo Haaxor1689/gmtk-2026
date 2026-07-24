@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://h5d8i7255gav"]
+[gd_scene format=4 uid="uid://1bape5xetsht"]
 
 [ext_resource type="TileSet" uid="uid://c430phlsddfjk" path="res://src/tilemap/carriage_tileset.tres" id="2_68xyb"]
 [ext_resource type="PackedScene" uid="uid://dke36x3se7ote" path="res://src/player/player.tscn" id="3_ay5hh"]
