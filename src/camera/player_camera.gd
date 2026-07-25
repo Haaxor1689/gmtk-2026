@@ -17,6 +17,13 @@ func _ready() -> void:
   follow_cam_pos = global_position
   actual_cam_pos = global_position
 
+func snap_to(target_position: Vector2) -> void:
+  follow_cam_pos = target_position
+  actual_cam_pos = target_position
+  var cam_subpixel_offset = actual_cam_pos.round() - actual_cam_pos
+  Global.viewport_container.material.set_shader_parameter("cam_offset", cam_subpixel_offset)
+  global_position = actual_cam_pos.round()
+
 func _process(delta: float) -> void:
   if Global.player == null:
     return

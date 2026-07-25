@@ -12,6 +12,9 @@ var inputs = {
 }
 
 func _unhandled_input(event: InputEvent) -> void:
+  if Global.input_disabled:
+    return
+
   for dir in inputs.keys():
     if event.is_action_pressed(dir):
       var moved_node = try_move(inputs[dir], self)
@@ -34,4 +37,4 @@ func _exit_tree() -> void:
 
 func death_check() -> void:
   if cool_fuel <= 0:
-    Global.change_scene(load(Global.current_level_path))
+    Global.change_scene(load(Global.current_level_path), Global.current_player_spawn_position)

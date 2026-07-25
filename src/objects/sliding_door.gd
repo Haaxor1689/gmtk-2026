@@ -4,6 +4,7 @@ var is_open := false
 var is_moving := false
 
 @export var open_scene: String
+@export var player_spawn_position := Vector2.ZERO
 
 @onready var sprite := $Sprite2D
 @onready var sprite_material := sprite.material as ShaderMaterial
@@ -36,8 +37,7 @@ func try_move(_direction: Vector2, pushed_by: GridNode) -> GridNode:
 
 func open_door():
 	if open_scene:
-		Global.current_level_path = open_scene
-		Global.change_scene(load(open_scene))
+		Global.change_scene(load(open_scene), player_spawn_position)
 	is_moving = true
 	var tween := create_tween()
 	tween.tween_property(sprite, "position:y", sprite.position.y - 14, 1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)

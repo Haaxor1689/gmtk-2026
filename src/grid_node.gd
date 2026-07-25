@@ -5,6 +5,7 @@ var grid_pos: Vector2 = Vector2.ZERO
 @export var is_pushable: bool = false
 @export var is_solid: bool = true
 @export var push_cost: float = 2.0
+@export var z_index_offset: int = 0
 
 func _ready() -> void:
 	Global.align_to_grid(self)
@@ -17,7 +18,11 @@ func _exit_tree() -> void:
 func update_z_index() -> void:
 	# Update z_index based on Y position for proper depth sorting
 	# Base offset ensures objects are above background/walls but can be below foreground
-	z_index = Global.GRID_NODE_BASE_Z_INDEX + int(global_position.y)
+	z_index = Global.GRID_NODE_BASE_Z_INDEX + int(global_position.y) + z_index_offset
+
+func grid_to_global(grid_position: Vector2) -> Vector2:
+	var local_center = Global.tilemap.map_to_local(grid_position)
+	return Global.tilemap.to_global(local_center)
 
 func try_move(direction: Vector2, pushed_by: GridNode) -> GridNode:
 	if !is_pushable && pushed_by != Global.player:
@@ -40,16 +45,12 @@ func try_move(direction: Vector2, pushed_by: GridNode) -> GridNode:
 				animate_move()
 				return null
 
-	var local_center = Global.tilemap.map_to_local(new_position)
-	var target_position = Global.tilemap.to_global(local_center)
-
 	grid_pos = new_position
+	animate_move(grid_to_global(new_position))
 
-	animate_move(target_position)
 	return self
 
-# TODO: Fix objects drifting upwards if this function is spammed while they are not moving horizontally
-func animate_move(target_position := global_position) -> void:
+func animate_move(target_position := grid_to_global(grid_pos)) -> void:
 	# Kill any existing tween
 	if get_meta("move_tween", []).size() > 0:
 		for t in get_meta("move_tween"):
