@@ -19,6 +19,7 @@ config/icon="uid://jn1poq1slkun"
 [autoload]
 
 Global="*uid://dr6t2hxva1ip8"
+Lines="*res://src/lines.gd"
 
 [display]
 
@@ -27,6 +28,14 @@ window/size/viewport_height=1080
 window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+
+[gui]
+
+fonts/dynamic_fonts/use_oversampling=false
+theme/default_font_antialiasing=0
+theme/default_font_hinting=0
+theme/default_font_subpixel_positioning=0
+theme/custom="uid://cpd3eobs808u4"
 
 [input]
 

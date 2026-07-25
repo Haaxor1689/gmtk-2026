@@ -4,8 +4,7 @@ extends GridNode
 
 @onready var sprite := $Sprite2D
 @onready var sprite_depleted := $DepletedSprite2D
-@onready var status_label : Label = $status_text
-@onready var label_timer : Timer = $label_timer
+
 @onready var fuel_step := push_cost
 
 func try_move(_direction: Vector2, pushed_by: GridNode) -> GridNode:
@@ -15,10 +14,10 @@ func try_move(_direction: Vector2, pushed_by: GridNode) -> GridNode:
 		return null
 
 	elif stored_fuel <= 0:
-		update_status_label("Station is Empty!")
+		Global.play_line("Station is Empty!", self)
 
 	elif Global.player.cool_fuel == 100.0:
-		update_status_label("Full on Fuel!")
+		Global.play_line("Full on Fuel!", self)
 
 	push_cost = fuel_step
 	var fuel_to_add = max(push_cost, Global.player.cool_fuel - 100.0)
@@ -31,11 +30,3 @@ func try_move(_direction: Vector2, pushed_by: GridNode) -> GridNode:
 		sprite_depleted.visible = true
 
 	return self
-
-func update_status_label(text: String) -> void:
-	status_label.text = text
-	status_label.visible = true
-	label_timer.start()
-
-func _on_label_timer_timeout() -> void:
-	status_label.visible = false
