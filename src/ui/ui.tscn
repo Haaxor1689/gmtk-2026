@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://pqroiyaaa48t"]
+
+[ext_resource type="Script" uid="uid://d3hlkb88b0xe2" path="res://src/ui/fuel_bar.gd" id="1_sp1ie"]
+[ext_resource type="Texture2D" uid="uid://cirfy64bxuo7v" path="res://assets/sprites/ui/fuel_under.png" id="2_qemve"]
+[ext_resource type="Texture2D" uid="uid://d3xgthyxhf3wx" path="res://assets/sprites/ui/fuel_progress.png" id="3_8wxmc"]
+[ext_resource type="Texture2D" uid="uid://886ik3hfhhg0" path="res://assets/sprites/ui/fuel_over.png" id="3_sjdex"]
+
+[node name="UI" type="Control" unique_id=1354910047]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="FuelBar" type="MarginContainer" parent="." unique_id=862753382]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("1_sp1ie")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="FuelBar" unique_id=524138676]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+value = 100.0
+fill_mode = 3
+texture_under = ExtResource("2_qemve")
+texture_over = ExtResource("3_sjdex")
+texture_progress = ExtResource("3_8wxmc")

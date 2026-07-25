@@ -9,6 +9,7 @@ extends Node
 @onready var tilemap: TileMapLayer = $SubViewportContainer/SubViewport/GlobalTilemap
 
 var player: GridNode
+signal fuel_changed(new_fuel: float)
 
 var current_level: Node = null
 var current_level_path: String
@@ -86,6 +87,7 @@ func fade_from_black() -> void:
 	print("Fade from black complete")
 
 func _ready() -> void:
+	scene_fade.visible = true
 	player = PLAYER_SCENE.instantiate() as GridNode
 	subviewport.add_child(player)
 	change_scene(load("res://src/levels/level1.tscn"), initial_player_spawn_position)

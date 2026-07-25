@@ -2,8 +2,6 @@ extends GridNode
 
 var cool_fuel: float = 100.0
 
-@onready var fuel_label: Label = $fuel_label
-
 var inputs = {
   "up" = Vector2.UP,
   "down" = Vector2.DOWN,
@@ -23,7 +21,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func update_fuel(modifier) -> void:
   cool_fuel = clamp(cool_fuel + modifier, 0, 100)
-  fuel_label.text = str(cool_fuel)
+  Global.fuel_changed.emit(cool_fuel)
   death_check()
 
 func _ready() -> void:
