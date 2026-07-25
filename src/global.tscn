@@ -4,6 +4,7 @@
 [ext_resource type="Shader" uid="uid://3bi8ttk0oxhe" path="res://src/camera/subpixel.gdshader" id="1_m7a4q"]
 [ext_resource type="PackedScene" uid="uid://b5xugfhxsekkf" path="res://src/camera/player_camera.tscn" id="2_kfmdv"]
 [ext_resource type="TileSet" uid="uid://c16penhbhnhph" path="res://src/tilemap/carriage.tres" id="3_m7a4q"]
+[ext_resource type="PackedScene" uid="uid://pqroiyaaa48t" path="res://src/ui/ui.tscn" id="5_kfmdv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pribe"]
 shader = ExtResource("1_m7a4q")
@@ -32,10 +33,21 @@ tile_set = ExtResource("3_m7a4q")
 
 [node name="PlayerCamera" parent="SubViewportContainer/SubViewport" unique_id=1971294424 instance=ExtResource("2_kfmdv")]
 
+[node name="UI" parent="." unique_id=1354910047 instance=ExtResource("5_kfmdv")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(3, 3)
+
 [node name="SceneFade" type="ColorRect" parent="." unique_id=833339591]
+visible = false
 z_index = 1001
-offset_right = 320.0
-offset_bottom = 180.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 scale = Vector2(6, 6)
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
