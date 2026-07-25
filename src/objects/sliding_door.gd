@@ -36,6 +36,7 @@ func try_move(_direction: Vector2, pushed_by: GridNode) -> GridNode:
 
 func open_door():
 	if open_scene:
+		Global.current_level_path = open_scene
 		Global.change_scene(load(open_scene))
 	is_moving = true
 	var tween := create_tween()

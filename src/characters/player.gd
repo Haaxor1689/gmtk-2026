@@ -19,8 +19,9 @@ func _unhandled_input(event: InputEvent) -> void:
         update_fuel(-moved_node.push_cost)
 
 func update_fuel(modifier) -> void:
-  cool_fuel += modifier
+  cool_fuel = clamp(cool_fuel + modifier, 0, 100)
   fuel_label.text = str(cool_fuel)
+  death_check()
 
 func _ready() -> void:
   super._ready()
@@ -30,3 +31,7 @@ func _exit_tree() -> void:
   super._exit_tree()
   if Global.player == self:
     Global.player = null
+
+func death_check() -> void:
+  if cool_fuel <= 0:
+    Global.change_scene(load(Global.current_level_path))

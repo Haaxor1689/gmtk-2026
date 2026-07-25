@@ -7,6 +7,7 @@ extends Node
 var player: GridNode
 
 var current_level: Node = null
+var current_level_path: String = "res://src/levels/level1.tscn"
 
 const TILE_SIZE: int = 16
 const GRID_NODE_BASE_Z_INDEX: int = 50
@@ -33,4 +34,4 @@ func change_scene(new_level: PackedScene) -> void:
 	$SubViewportContainer/SubViewport/LevelContainer.add_child(current_level)
 
 func _ready() -> void:
-	change_scene(load("res://src/levels/level1.tscn"))
+	change_scene(load(current_level_path))
