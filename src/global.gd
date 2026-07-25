@@ -58,6 +58,7 @@ func change_scene(new_level: PackedScene, new_player_position: Vector2) -> void:
 
 	if player:
 		player.global_position = new_player_position
+		player.cool_fuel = 100.0
 		align_to_grid(player)
 		player_camera.snap_to(player.global_position)
 
