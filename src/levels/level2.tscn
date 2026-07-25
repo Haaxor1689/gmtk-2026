@@ -2,7 +2,6 @@
 
 [ext_resource type="TileSet" uid="uid://c16penhbhnhph" path="res://src/tilemap/carriage.tres" id="1_ovyr1"]
 [ext_resource type="Script" uid="uid://yyfdpisdfsgv" path="res://src/tilemap/tilemap.gd" id="2_k2dq7"]
-[ext_resource type="PackedScene" uid="uid://bwsnx88dd2pws" path="res://src/objects/heavy_box.tscn" id="5_ebaqd"]
 [ext_resource type="PackedScene" uid="uid://d1lhydxk7ubma" path="res://src/objects/refuel_station.tscn" id="5_f08ra"]
 [ext_resource type="PackedScene" uid="uid://d10awnyfwx1am" path="res://src/objects/sliding_door.tscn" id="6_ebaqd"]
 
@@ -81,11 +80,3 @@ position = Vector2(-184, 8)
 
 [node name="SlidingDoor3" parent="Objects" unique_id=226978572 instance=ExtResource("6_ebaqd")]
 position = Vector2(264, 8)
-
-[node name="Boxes" type="Node2D" parent="Objects" unique_id=1356426094]
-
-[node name="Box" parent="Objects/Boxes" unique_id=1172009491 instance=ExtResource("5_ebaqd")]
-position = Vector2(120, 8)
-
-[node name="ProleMale" parent="." unique_id=66109474 instance=ExtResource("7_8s5si")]
-position = Vector2(-40, 8)
