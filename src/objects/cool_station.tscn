@@ -1,0 +1,82 @@
+[gd_scene format=4 uid="uid://c7qc81r68yavh"]
+
+[ext_resource type="Script" uid="uid://8refknkft8pd" path="res://src/objects/cool_station.gd" id="1_rrqae"]
+[ext_resource type="Texture2D" uid="uid://buq7xfkt5xldm" path="res://assets/ChargeStation.png" id="1_xp2po"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rrqae"]
+texture = ExtResource("1_xp2po")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g4v7s"]
+sources/0 = SubResource("TileSetAtlasSource_rrqae")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0so0o"]
+texture = ExtResource("1_xp2po")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yf5fn"]
+sources/0 = SubResource("TileSetAtlasSource_0so0o")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(16, 16)
+
+[node name="CoolStation" type="Node2D" unique_id=1618634869]
+script = ExtResource("1_rrqae")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=536797453]
+position = Vector2(8, -1)
+tile_map_data = PackedByteArray("AAD+////AAAAAAMAAAD9////AAADAAEAADD+//7/AAACAAIAAAD9//7/AAADAAIAAAD8//7/AAABAAIAAAD8////AAADAAAAAAD///7/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_g4v7s")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=2050778644]
+position = Vector2(8, -1)
+tile_map_data = PackedByteArray("AAD8//7/AAABAAEAAAD7/wAAAAAAAAEAAAD9/wAAAAAAAAEAAAD8/wAAAAABAAEAADD+////AAACAAAAAAD/////AAABAAAAAAD7////AAACAAEAADA=")
+tile_set = SubResource("TileSet_yf5fn")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1892140377]
+position = Vector2(-35.5, -44)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1659749345]
+position = Vector2(35.5, 36)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Refuel Label" type="Label" parent="." unique_id=1105478415]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.5
+offset_top = -44.0
+offset_right = 35.5
+offset_bottom = -33.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 7
+text = "Press Space to refuel"
+horizontal_alignment = 1

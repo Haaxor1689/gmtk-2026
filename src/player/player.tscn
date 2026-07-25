@@ -5,14 +5,13 @@
 
 [node name="Player" type="Node2D" unique_id=2070835607]
 script = ExtResource("1_rxibo")
-is_pushable = null
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1003064723]
 position = Vector2(0, -13)
 texture = ExtResource("2_mf2ua")
 
 [node name="fuel_label" type="Label" parent="." unique_id=1894299959]
-z_index = 2
+z_index = 5
 z_as_relative = false
 anchors_preset = 5
 anchor_left = 0.5

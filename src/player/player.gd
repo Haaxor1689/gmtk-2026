@@ -14,9 +14,9 @@ var inputs = {
 func _unhandled_input(event: InputEvent) -> void:
   for dir in inputs.keys():
     if event.is_action_pressed(dir):
-      var cool_cost = Global.try_move(self, inputs[dir])
+      var cool_cost = Global.try_move(self, inputs[dir])["cost"]
       update_fuel(-cool_cost)
-	
+
 func update_fuel(modifier) -> void:
   cool_fuel += modifier
   fuel_label.text = str(cool_fuel)
