@@ -24,7 +24,7 @@ func align_to_grid(node: GridNode) -> void:
 	node.update_z_index()
 	print("Aligned ", node.name, " to grid at ", cell)
 
-func change_level(new_level: PackedScene) -> void:
+func change_scene(new_level: PackedScene) -> void:
 	if current_level:
 		current_level.queue_free()
 
@@ -33,4 +33,4 @@ func change_level(new_level: PackedScene) -> void:
 	$SubViewportContainer/SubViewport/LevelContainer.add_child(current_level)
 
 func _ready() -> void:
-	change_level(load("res://src/levels/level1.tscn"))
+	change_scene(load("res://src/levels/level1.tscn"))

@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b2hxwxx0f023i"]
+
+[ext_resource type="Script" uid="uid://d2sw1a8mwu3p2" path="res://src/grid_node.gd" id="1_8t26t"]
+[ext_resource type="Script" uid="uid://g2ktda8n508v" path="res://src/editor_sprite_2d.gd" id="2_73e05"]
+[ext_resource type="Texture2D" uid="uid://dv00t6ad5gcol" path="res://assets/sprites/editor_barricade.png" id="2_o1bte"]
+
+[node name="InvisibleBarricade" type="Node2D" unique_id=238698994]
+script = ExtResource("1_8t26t")
+metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
+
+[node name="EditorSprite2D" type="Sprite2D" parent="." unique_id=812524852]
+texture = ExtResource("2_o1bte")
+script = ExtResource("2_73e05")

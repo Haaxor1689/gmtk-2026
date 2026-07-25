@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d10awnyfwx1am"]
+
+[ext_resource type="Script" uid="uid://c48o1tsqjsnxg" path="res://src/objects/sliding_door.gd" id="1_v0qu3"]
+[ext_resource type="Texture2D" uid="uid://bumb16k5c6hub" path="res://assets/sprites/sliding_door.png" id="2_v0qu3"]
+[ext_resource type="Shader" uid="uid://ym8ymdwij2m7" path="res://src/objects/sliding_door.gdshader" id="3_pwl6p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q7m78"]
+shader = ExtResource("3_pwl6p")
+shader_parameter/cutoff_y = 0.0
+
+[node name="SlidingDoor" type="Node2D" unique_id=1479868204]
+script = ExtResource("1_v0qu3")
+metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1327680736]
+material = SubResource("ShaderMaterial_q7m78")
+position = Vector2(0, -15)
+texture = ExtResource("2_v0qu3")
+
+[node name="CloseTimer" type="Timer" parent="." unique_id=1950273640]

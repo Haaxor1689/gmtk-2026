@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://c16penhbhnhph"]
 
-[ext_resource type="Texture2D" uid="uid://brvaw62bownfs" path="res://assets/carriage_tiles.png" id="1_7nlev"]
+[ext_resource type="Texture2D" uid="uid://brvaw62bownfs" path="res://assets/sprites/carriage_tiles.png" id="1_7nlev"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_vfc30"]
 tile_data = PackedInt32Array(0, 262144, 1, 65536, 262144, 2, 1, 327680, 1, 65537, 327680, 2)
