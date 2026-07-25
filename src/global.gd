@@ -19,9 +19,11 @@ var input_disabled := true
 var is_changing_scene := false
 
 const PLAYER_SCENE: PackedScene = preload("res://src/characters/player.tscn")
+const FLOATING_TEXT_SCENE: PackedScene = preload("res://src/ui/floating_text.tscn")
 
 const TILE_SIZE: int = 16
 const GRID_NODE_BASE_Z_INDEX: int = 50
+
 const SCENE_FADE_DURATION: float = 0.5
 
 @export var initial_player_spawn_position := Vector2(-216, 8)
@@ -44,7 +46,7 @@ func change_scene(new_level: PackedScene, new_player_position: Vector2) -> void:
 		return
 
 	is_changing_scene = true
-	input_disabled = true
+	disable_player_input()
 
 	await fade_to_black()
 
@@ -65,7 +67,7 @@ func change_scene(new_level: PackedScene, new_player_position: Vector2) -> void:
 
 	await fade_from_black()
 
-	input_disabled = false
+	enable_player_input()
 	is_changing_scene = false
 
 func fade_to_black() -> void:
@@ -92,3 +94,17 @@ func _ready() -> void:
 	player = PLAYER_SCENE.instantiate() as GridNode
 	subviewport.add_child(player)
 	change_scene(load("res://src/levels/level1.tscn"), initial_player_spawn_position)
+
+func disable_player_input() -> void:
+	input_disabled = true
+
+func enable_player_input() -> void:
+	input_disabled = false
+	var entry: Array = Lines.barks.jeevis.notify_control.random()
+	play_line(entry[0], player, 38.0, load(entry[1]) as AudioStream)
+
+func play_line(line: String, node: Node2D = null, y_offset: float = 38.0, voice_line_stream: AudioStream = null) -> void:
+	var floating_text := FLOATING_TEXT_SCENE.instantiate()
+	level_container.add_child(floating_text)
+	await floating_text.play_line(line, node, y_offset, voice_line_stream)
+	floating_text.queue_free()

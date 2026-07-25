@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bhi7husn585u"]
+
+[ext_resource type="Script" uid="uid://cwolsw84cj7lj" path="res://src/ui/floating_text.gd" id="1_d02jk"]
+
+[node name="FloatingText" type="Node2D" unique_id=1553072286]
+script = ExtResource("1_d02jk")
+
+[node name="Label" type="Label" parent="." unique_id=1146541178]
+visible = false
+custom_minimum_size = Vector2(144, 0)
+offset_left = -72.0
+offset_top = -24.0
+offset_right = 72.0
+horizontal_alignment = 1
+autowrap_mode = 3
+z_index = 1001
+
+[node name="VoiceLine" type="AudioStreamPlayer" parent="." unique_id=1692875764]
