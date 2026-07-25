@@ -191,7 +191,7 @@ position = Vector2(168, -40)
 position = Vector2(136, 8)
 
 [node name="Box36" parent="Objects" unique_id=1325566697 instance=ExtResource("5_ghtb1")]
-position = Vector2(120, 56)
+position = Vector2(152, 40)
 
 [node name="Box37" parent="Objects" unique_id=961801860 instance=ExtResource("5_ghtb1")]
 position = Vector2(168, -8)
@@ -205,6 +205,7 @@ position = Vector2(-24, 56)
 [node name="Table" parent="Objects" unique_id=1830964967 instance=ExtResource("9_ql4hq")]
 position = Vector2(40, -40)
 rotation = 3.1415927
+push_cost = 0.0
 
 [node name="Barrel" parent="Objects" unique_id=599954580 instance=ExtResource("10_5lu3u")]
 position = Vector2(8, 40)

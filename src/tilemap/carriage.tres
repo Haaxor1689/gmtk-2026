@@ -1,6 +1,7 @@
 [gd_resource type="TileSet" format=3 uid="uid://c16penhbhnhph"]
 
 [ext_resource type="Texture2D" uid="uid://brvaw62bownfs" path="res://assets/sprites/carriage_tiles.png" id="1_7nlev"]
+[ext_resource type="Texture2D" uid="uid://dtuk36mp2cn24" path="res://assets/sprites/bench.png" id="2_vfc30"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_vfc30"]
 tile_data = PackedInt32Array(0, 262144, 1, 65536, 262144, 2, 1, 327680, 1, 65537, 327680, 2)
@@ -10,6 +11,9 @@ tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 2)
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_ijdy3"]
 tile_data = PackedInt32Array(0, 131072, 1, 65536, 131072, 2)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_lmq6s"]
+tile_data = PackedInt32Array(0, 6, 268435456, 65536, 6, 268435457, 131072, 6, 268435458, 1, 6, 0, 65537, 6, 1, 131073, 6, 2)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmq6s"]
 texture = ExtResource("1_7nlev")
@@ -60,8 +64,16 @@ texture = ExtResource("1_7nlev")
 2:3/next_alternative_id = 2
 2:3/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2vldp"]
+texture = ExtResource("2_vfc30")
+0:0/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+
 [resource]
 sources/0 = SubResource("TileSetAtlasSource_lmq6s")
+sources/6 = SubResource("TileSetAtlasSource_2vldp")
 pattern_0 = SubResource("TileMapPattern_vfc30")
 pattern_1 = SubResource("TileMapPattern_hu453")
 pattern_2 = SubResource("TileMapPattern_ijdy3")
+pattern_3 = SubResource("TileMapPattern_lmq6s")
