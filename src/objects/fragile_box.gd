@@ -25,3 +25,4 @@ func set_broken() -> void:
 	sprite.visible = false
 	sprite_broken.visible = true
 	is_broken = true
+	is_solid = false
