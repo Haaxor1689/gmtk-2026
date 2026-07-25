@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dywfmpuudiu2a"
-path="res://.godot/imported/CarriageExterior.png-8c4def72c08ead957fa35002862fdcea.ctex"
+uid="uid://brvaw62bownfs"
+path="res://.godot/imported/carriage_tiles.png-c057297c53498506388822ca031be51c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CarriageExterior.png"
-dest_files=["res://.godot/imported/CarriageExterior.png-8c4def72c08ead957fa35002862fdcea.ctex"]
+source_file="res://assets/carriage_tiles.png"
+dest_files=["res://.godot/imported/carriage_tiles.png-c057297c53498506388822ca031be51c.ctex"]
 
 [params]
 

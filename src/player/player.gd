@@ -14,7 +14,7 @@ var inputs = {
 func _unhandled_input(event: InputEvent) -> void:
   for dir in inputs.keys():
     if event.is_action_pressed(dir):
-      var cool_cost = Global.try_move(self, inputs[dir])["cost"]
+      var cool_cost = try_move(inputs[dir])
       update_fuel(-cool_cost)
 
 func update_fuel(modifier) -> void:
