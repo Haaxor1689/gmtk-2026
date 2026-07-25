@@ -9,11 +9,17 @@ extends Node
 @onready var tilemap: TileMapLayer = $SubViewportContainer/SubViewport/GlobalTilemap
 
 var player: GridNode
+
 signal fuel_changed(new_fuel: float)
+signal inventory_changed()
 
 var current_level: Node = null
-var current_level_path: String
-var current_player_spawn_position := Vector2.ZERO
+
+var restart_level_path: String
+var restart_spawn_position := Vector2.ZERO
+var restart_inventory: Array = []
+
+var current_inventory: Array = []
 
 var input_disabled := true
 var is_changing_scene := false
@@ -50,9 +56,10 @@ func change_scene(new_level: PackedScene, new_player_position: Vector2) -> void:
 
 	await fade_to_black()
 
-	current_level_path = new_level.resource_path
-	current_player_spawn_position = new_player_position
-
+	restart_level_path = new_level.resource_path
+	restart_spawn_position = new_player_position
+	restart_inventory = current_inventory.duplicate()
+	inventory_changed.emit()
 	if current_level:
 		current_level.queue_free()
 
@@ -71,7 +78,7 @@ func change_scene(new_level: PackedScene, new_player_position: Vector2) -> void:
 	is_changing_scene = false
 
 func fade_to_black() -> void:
-	if !scene_fade || !current_level_path:
+	if !scene_fade || !restart_level_path:
 		return
 
 	var tween := create_tween()
@@ -108,3 +115,12 @@ func play_line(line: String, node: Node2D = null, y_offset: float = 38.0, voice_
 	level_container.add_child(floating_text)
 	await floating_text.play_line(line, node, y_offset, voice_line_stream)
 	floating_text.queue_free()
+
+func collect_item(item_name: String, texture_path: String) -> void:
+	# Check if item already collected
+	for item in current_inventory:
+		if item[0] == item_name:
+			return
+
+	current_inventory.append([item_name, texture_path])
+	inventory_changed.emit()

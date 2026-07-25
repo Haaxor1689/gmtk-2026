@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bwsnx88dd2pws" path="res://src/objects/heavy_box.tscn" id="5_ebaqd"]
 [ext_resource type="PackedScene" uid="uid://d1lhydxk7ubma" path="res://src/objects/refuel_station.tscn" id="5_f08ra"]
 [ext_resource type="PackedScene" uid="uid://d10awnyfwx1am" path="res://src/objects/sliding_door.tscn" id="6_ebaqd"]
-[ext_resource type="PackedScene" uid="uid://bkak4wk1bjq0t" path="res://src/characters/prole_male.tscn" id="7_8s5si"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_feg4a"]
 tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 1)

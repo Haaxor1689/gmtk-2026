@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://kj6l3wfjktgt" path="res://src/characters/passenger.gd" id="1_mqd1r"]
 [ext_resource type="Texture2D" uid="uid://cwuf54g6awtl6" path="res://assets/sprites/characters/prole_m_01.png" id="2_ngfac"]
-[ext_resource type="FontFile" uid="uid://bin6p81niy2mk" path="res://assets/fonts/IronManOfWar001BNcv-yZnY.ttf" id="3_kc1go"]
 
 [node name="Passenger" type="Node2D" unique_id=66109474]
 script = ExtResource("1_mqd1r")
@@ -26,9 +25,7 @@ offset_right = 4.0
 offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("3_kc1go")
-theme_override_font_sizes/font_size = 12
+theme_override_constants/outline_size = 6
 text = "Character"
 horizontal_alignment = 1
 vertical_alignment = 1

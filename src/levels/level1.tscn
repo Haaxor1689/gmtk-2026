@@ -44,6 +44,7 @@ script = ExtResource("3_feg4a")
 position = Vector2(264, 8)
 open_scene = "res://src/levels/level2.tscn"
 player_spawn_position = Vector2(-232, 8)
+requires_item = "Punchcard"
 
 [node name="RefuelStation" parent="Objects" unique_id=1130668928 instance=ExtResource("8_ou3gi")]
 position = Vector2(-56, -40)
