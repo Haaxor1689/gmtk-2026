@@ -31,3 +31,11 @@ tile_set = ExtResource("3_m7a4q")
 [node name="LevelContainer" type="Node" parent="SubViewportContainer/SubViewport" unique_id=799448590]
 
 [node name="PlayerCamera" parent="SubViewportContainer/SubViewport" unique_id=1971294424 instance=ExtResource("2_kfmdv")]
+
+[node name="SceneFade" type="ColorRect" parent="." unique_id=833339591]
+z_index = 1001
+offset_right = 320.0
+offset_bottom = 180.0
+scale = Vector2(6, 6)
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

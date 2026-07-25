@@ -2,7 +2,6 @@
 
 [ext_resource type="TileSet" uid="uid://c16penhbhnhph" path="res://src/tilemap/carriage.tres" id="1_ovyr1"]
 [ext_resource type="Script" uid="uid://yyfdpisdfsgv" path="res://src/tilemap/tilemap.gd" id="2_k2dq7"]
-[ext_resource type="PackedScene" uid="uid://dke36x3se7ote" path="res://src/characters/player.tscn" id="4_hxa2t"]
 [ext_resource type="PackedScene" uid="uid://d1lhydxk7ubma" path="res://src/objects/refuel_station.tscn" id="5_f08ra"]
 [ext_resource type="PackedScene" uid="uid://d10awnyfwx1am" path="res://src/objects/sliding_door.tscn" id="6_ebaqd"]
 [ext_resource type="PackedScene" uid="uid://bkak4wk1bjq0t" path="res://src/characters/prole_male.tscn" id="7_8s5si"]
@@ -11,7 +10,6 @@
 tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ebaqd"]
-load_path = "res://.godot/imported/tilemap.png-97bf26cbe4098c4ccdc8ca24f9406864.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feg4a"]
 texture = SubResource("CompressedTexture2D_ebaqd")
@@ -69,16 +67,13 @@ position = Vector2(-216, -40)
 [node name="SlidingDoor" parent="Objects" unique_id=1479868204 instance=ExtResource("6_ebaqd")]
 position = Vector2(-248, 8)
 open_scene = "res://src/levels/level1.tscn"
+player_spawn_position = Vector2(248, 8)
 
 [node name="SlidingDoor2" parent="Objects" unique_id=1713653501 instance=ExtResource("6_ebaqd")]
 position = Vector2(-184, 8)
 
 [node name="SlidingDoor3" parent="Objects" unique_id=226978572 instance=ExtResource("6_ebaqd")]
 position = Vector2(264, 8)
-
-[node name="Player" parent="." unique_id=2070835607 instance=ExtResource("4_hxa2t")]
-position = Vector2(-216, 8)
-is_pushable = true
 
 [node name="ProleMale" parent="." unique_id=66109474 instance=ExtResource("7_8s5si")]
 position = Vector2(-104, -24)

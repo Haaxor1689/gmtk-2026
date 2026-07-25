@@ -10,6 +10,7 @@ shader_parameter/cutoff_y = 0.0
 
 [node name="SlidingDoor" type="Node2D" unique_id=1479868204]
 script = ExtResource("1_v0qu3")
+z_index_offset = -15
 metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1327680736]
