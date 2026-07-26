@@ -285,8 +285,7 @@ texture = ExtResource("7_c8fom")
 lines_set = "prosp_w"
 wants_item = ExtResource("19_n7dl1")
 time_to_get_item = 45.0
-is_pushable = true
 
-[node name="Punchcard" parent="." unique_id=33318948 instance=ExtResource("19_hkl2j")]
+[node name="Stolen Wallet" parent="." unique_id=33318948 instance=ExtResource("19_hkl2j")]
 position = Vector2(232, -40)
 item_data = ExtResource("19_n7dl1")

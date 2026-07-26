@@ -26,3 +26,4 @@ func set_broken() -> void:
 	sprite_broken.visible = true
 	is_broken = true
 	is_solid = false
+	SFX.play(SFX.box_break)

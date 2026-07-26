@@ -25,10 +25,12 @@ func try_move(_direction: Vector2, pushed_by: GridNode) -> GridNode:
 		)
 		sprite.visible = false
 		sprite_depleted.visible = true
+		SFX.play(SFX.error_sound)
 		return null
 	else:
 		var fuel_to_add = max(fuel_step, Global.player.cool_fuel - 100.0)
 		stored_fuel += fuel_to_add
 		push_cost = fuel_to_add
+		SFX.play(SFX.fuel_recharge)
 
 	return self

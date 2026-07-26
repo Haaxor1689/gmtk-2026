@@ -197,6 +197,7 @@ func collect_item(item: InventoryItem) -> void:
 		return
 
 	current_inventory.append(item)
+	SFX.play(SFX.item_pickup)
 	inventory_changed.emit()
 
 func consume_item(item: InventoryItem) -> bool:
@@ -217,8 +218,8 @@ func _on_timer_timeout() -> void:
 	game_over_sound.play()
 	fade_to_black()
 	game_over_label.visible = true
-	
+
 	# Wait for the game over audio to finish before restarting
 	await game_over_sound.finished
-	
+
 	get_tree().reload_current_scene()

@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dhx75jemkike1"
-path="res://.godot/imported/BoxBreak.wav-ef840712df313a70876f67ed99429518.sample"
+uid="uid://vng402prv6ap"
+path="res://.godot/imported/game_over.wav-98c43925f1fc5af335b26fc2321672a4.sample"
 
 [deps]
 
-source_file="res://assets/sfx/BoxBreak.wav"
-dest_files=["res://.godot/imported/BoxBreak.wav-ef840712df313a70876f67ed99429518.sample"]
+source_file="res://assets/sfx/game_over.wav"
+dest_files=["res://.godot/imported/game_over.wav-98c43925f1fc5af335b26fc2321672a4.sample"]
 
 [params]
 

@@ -71,10 +71,13 @@ func animate_move(target_position := grid_to_global(grid_pos)) -> void:
 	tween.set_ease(Tween.EASE_OUT)
 
 	var arc_mult := 0.0
+	var sound = SFX.push_object
 	if self == Global.player:
 		arc_mult = 6.0
+		sound = SFX.character_steps
 	elif global_position == target_position:
 		arc_mult = 2.0
+		sound = SFX.object_bump
 
 	# Position tween with arc motion
 	var start_pos := global_position
@@ -85,3 +88,4 @@ func animate_move(target_position := grid_to_global(grid_pos)) -> void:
 			global_position = horizontal + Vector2(0, -arc_height)
 			update_z_index()
 	, 0.0, 1.0, 0.3)
+	SFX.play(sound, randf_range(0.92, 1.08), randf_range(0.92, 1.08))

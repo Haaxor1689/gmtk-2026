@@ -19,6 +19,7 @@ run/max_fps=60
 
 Global="*uid://dr6t2hxva1ip8"
 Lines="*res://src/lines.gd"
+SFX="*res://src/sfx.gd"
 
 [display]
 

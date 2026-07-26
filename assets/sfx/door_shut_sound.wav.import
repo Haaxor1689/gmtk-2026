@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d2ibsb0kk645r"
-path="res://.godot/imported/Door shut sound.wav-3744df6765d426e05793371d27adafa0.sample"
+path="res://.godot/imported/door_shut_sound.wav-2c8a0bb3c74064b7d03a0da029b67fae.sample"
 
 [deps]
 
-source_file="res://assets/sfx/Door shut sound.wav"
-dest_files=["res://.godot/imported/Door shut sound.wav-3744df6765d426e05793371d27adafa0.sample"]
+source_file="res://assets/sfx/door_shut_sound.wav"
+dest_files=["res://.godot/imported/door_shut_sound.wav-2c8a0bb3c74064b7d03a0da029b67fae.sample"]
 
 [params]
 

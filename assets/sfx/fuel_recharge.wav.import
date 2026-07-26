@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b81it6vaus5u4"
-path="res://.godot/imported/FuelRecharge.wav-880502152455e5f62ce71cf2a37a7d74.sample"
+path="res://.godot/imported/fuel_recharge.wav-603a633dff9edcb2c39b5f858a83cc2f.sample"
 
 [deps]
 
-source_file="res://assets/sfx/FuelRecharge.wav"
-dest_files=["res://.godot/imported/FuelRecharge.wav-880502152455e5f62ce71cf2a37a7d74.sample"]
+source_file="res://assets/sfx/fuel_recharge.wav"
+dest_files=["res://.godot/imported/fuel_recharge.wav-603a633dff9edcb2c39b5f858a83cc2f.sample"]
 
 [params]
 

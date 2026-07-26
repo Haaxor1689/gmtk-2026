@@ -55,6 +55,7 @@ func open_door():
 		is_moving = false;
 		close_timer.start()
 	)
+	SFX.play(SFX.door_open_sound)
 
 func close_door():
 	close_timer.stop()
@@ -64,3 +65,4 @@ func close_door():
 	var tween := create_tween()
 	tween.tween_property(sprite, "position:y", sprite.position.y + 14, 1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
 	tween.tween_callback(func(): is_moving = false)
+	SFX.play(SFX.door_shut_sound)
