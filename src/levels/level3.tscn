@@ -4,13 +4,21 @@
 [ext_resource type="Script" uid="uid://yyfdpisdfsgv" path="res://src/tilemap/tilemap.gd" id="2_khw7q"]
 [ext_resource type="PackedScene" uid="uid://d10awnyfwx1am" path="res://src/objects/sliding_door.tscn" id="3_wuq67"]
 [ext_resource type="PackedScene" uid="uid://d1lhydxk7ubma" path="res://src/objects/refuel_station.tscn" id="4_d61mw"]
+[ext_resource type="PackedScene" uid="uid://b7jrn3kuobc6a" path="res://src/objects/suitcase.tscn" id="5_jtqkm"]
+[ext_resource type="PackedScene" uid="uid://d3wcs6il2qtfn" path="res://src/objects/fragile_box.tscn" id="6_khw7q"]
+[ext_resource type="Texture2D" uid="uid://dktuiaq7axyvn" path="res://assets/sprites/characters/Bandit_02.png" id="10_d61mw"]
+[ext_resource type="Texture2D" uid="uid://b5hb7iskr1qgp" path="res://assets/sprites/characters/Prosper_f_02.png" id="11_vio1i"]
+[ext_resource type="Texture2D" uid="uid://b4x0qmgajwxt4" path="res://assets/sprites/characters/prosper_m_02.png" id="12_3ac47"]
 [ext_resource type="PackedScene" uid="uid://ckhfe57bfi86m" path="res://src/characters/passenger.tscn" id="12_ioee8"]
+[ext_resource type="Texture2D" uid="uid://btbooicjh0s0o" path="res://assets/sprites/characters/prosper_m_01.png" id="12_khw7q"]
 [ext_resource type="Texture2D" uid="uid://bockxi16k1e6p" path="res://assets/sprites/characters/prole_f_01.png" id="13_6jvqt"]
 [ext_resource type="Texture2D" uid="uid://xxub0kyc323b" path="res://assets/sprites/characters/prole_f_02.png" id="14_o4inr"]
+[ext_resource type="PackedScene" uid="uid://bqgtb3odmditi" path="res://src/objects/item.tscn" id="14_wuq67"]
 [ext_resource type="Texture2D" uid="uid://w67m4ojj1afq" path="res://assets/sprites/characters/prole_m_02.png" id="15_u88aq"]
 [ext_resource type="Texture2D" uid="uid://d4h3sdk8mqos2" path="res://assets/sprites/characters/Bandit_01.png" id="16_h2p7i"]
-[ext_resource type="Texture2D" uid="uid://bqdhlihkgiom2" path="res://assets/sprites/characters/Police.png" id="17_ioee8"]
+[ext_resource type="Texture2D" uid="uid://mxs03iud4a3l" path="res://assets/sprites/wallet.png" id="17_3ac47"]
 [ext_resource type="Texture2D" uid="uid://dvj6vmq43xu63" path="res://assets/sprites/characters/Prosper_f_01.png" id="18_vdlwo"]
+[ext_resource type="PackedScene" uid="uid://bavdacpf630qe" path="res://src/objects/drink_machine.tscn" id="19_bbaia"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_feg4a"]
 tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 1)
@@ -57,7 +65,7 @@ script = ExtResource("2_khw7q")
 is_solid = true
 
 [node name="Interior" type="TileMapLayer" parent="." unique_id=327208598]
-tile_map_data = PackedByteArray("AAD1//z/BgAAAAAAAAD1//3/BgAAAAEAAAD1//7/BgAAAAIAAAD4//z/BgAAAAAAABD4//3/BgAAAAEAABD4//7/BgAAAAIAABD5//z/BgAAAAAAAAD5//3/BgAAAAEAAAD5//7/BgAAAAIAAAD8//z/BgAAAAAAABD8//3/BgAAAAEAABD8//7/BgAAAAIAABD9//z/BgAAAAAAAAD9//3/BgAAAAEAAAD9//7/BgAAAAIAAAAAAPz/BgAAAAAAABAAAP3/BgAAAAEAABAAAP7/BgAAAAIAABD4/wEABgAAAAAAABD4/wIABgAAAAEAABD4/wMABgAAAAIAABD5/wEABgAAAAAAAAD5/wIABgAAAAEAAAD5/wMABgAAAAIAAAD8/wEABgAAAAAAABD8/wIABgAAAAEAABD8/wMABgAAAAIAABD9/wEABgAAAAAAAAD9/wIABgAAAAEAAAD9/wMABgAAAAIAAAAAAAEABgAAAAAAABAAAAIABgAAAAEAABAAAAMABgAAAAIAABD1/wEABgAAAAAAAAD1/wIABgAAAAEAAAD1/wMABgAAAAIAAAAEAPz/AgACAAIAAAAEAP3/AgACAAMAAAAFAP//AgAEAAIAAAAGAPz/AgACAAIAAAAGAP3/AgACAAMAAAANAP3/AgAJAAAAAAANAP7/AgAJAAIAAAAPAP7/AgAJAAIAAAAPAP3/AgAJAAAAAAANAAMAAgAJAAIAAAAPAAMAAgAJAAIAAAANAAIAAgAJAAAAAAAPAAIAAgAJAAAAAAACAAEAAgAHAAAAAAACAAIAAgAHAAEAAAACAAMAAgAHAAIAAAAEAAIAAgAEAAIAAAAGAAEAAgAIAAAAAAAGAAIAAgAIAAEAAAAGAAMAAgAIAAIAAAAHAAEAAgAHAAAAAAAHAAIAAgAHAAEAAAAHAAMAAgAHAAIAAAAJAAMAAgADAAIAAAALAAMAAgADAAIAAAAKAAIAAgAEAAIAAADx/wIAAgAJAAAAAADx/wMAAgAJAAIAAADy/wIAAgAJAAAAAADy/wMAAgAJAAIAAADz/wIAAgAJAAAAAADz/wMAAgAJAAIAAAACAPz/AgAHAAAAAAACAP3/AgAHAAEAAAACAP7/AgAHAAIAAAAIAPz/AgAIAAAAAAAIAP3/AgAIAAEAAAAIAP7/AgAIAAIAAAALAPz/AgAIAAAAAAALAP3/AgAIAAEAAAALAP7/AgAIAAIAAAAJAPz/AgAHAAAAAAAJAP3/AgAHAAEAAAAJAP7/AgAHAAIAAAA=")
+tile_map_data = PackedByteArray("AAD1//z/BgAAAAAAAAD1//3/BgAAAAEAAAD1//7/BgAAAAIAAAD4//z/BgAAAAAAABD4//3/BgAAAAEAABD4//7/BgAAAAIAABD5//z/BgAAAAAAAAD5//3/BgAAAAEAAAD5//7/BgAAAAIAAAD8//z/BgAAAAAAABD8//3/BgAAAAEAABD8//7/BgAAAAIAABD4/wEABgAAAAAAABD4/wIABgAAAAEAABD4/wMABgAAAAIAABD5/wEABgAAAAAAAAD5/wIABgAAAAEAAAD5/wMABgAAAAIAAAD8/wEABgAAAAAAABD8/wIABgAAAAEAABD8/wMABgAAAAIAABD9/wEABgAAAAAAAAD9/wIABgAAAAEAAAD9/wMABgAAAAIAAAAAAAMABgAAAAIAABD1/wEABgAAAAAAAAD1/wIABgAAAAEAAAD1/wMABgAAAAIAAAAEAPz/AwACAAIAAAAEAP3/AwACAAMAAAAFAP//AwAEAAIAAAAGAPz/AwACAAIAAAAGAP3/AwACAAMAAAANAP3/AwAJAAAAAAANAP7/AwAJAAIAAAAPAP7/AwAJAAIAAAAPAP3/AwAJAAAAAAANAAMAAwAJAAIAAAAPAAMAAwAJAAIAAAANAAIAAwAJAAAAAAAPAAIAAwAJAAAAAAACAAEAAwAHAAAAAAACAAIAAwAHAAEAAAACAAMAAwAHAAIAAAAEAAIAAwAEAAIAAAAGAAEAAwAIAAAAAAAGAAIAAwAIAAEAAAAGAAMAAwAIAAIAAAAHAAEAAwAHAAAAAAAHAAIAAwAHAAEAAAAHAAMAAwAHAAIAAAAJAAMAAwADAAIAAAALAAMAAwADAAIAAAAKAAIAAwAEAAIAAADx/wIAAwAJAAAAAADx/wMAAwAJAAIAAADy/wIAAwAJAAAAAADy/wMAAwAJAAIAAADz/wIAAwAJAAAAAADz/wMAAwAJAAIAAAACAPz/AwAHAAAAAAACAP3/AwAHAAEAAAACAP7/AwAHAAIAAAAIAPz/AwAIAAAAAAAIAP3/AwAIAAEAAAAIAP7/AwAIAAIAAAALAPz/AwAIAAAAAAALAP3/AwAIAAEAAAALAP7/AwAIAAIAAAAJAPz/AwAHAAAAAAAJAP3/AwAHAAEAAAAJAP7/AwAHAAIAAAAAAAIABgAAAAAAABA=")
 tile_set = ExtResource("1_vio1i")
 collision_enabled = false
 script = ExtResource("2_khw7q")
@@ -75,7 +83,9 @@ script = ExtResource("2_khw7q")
 [node name="Objects" type="Node2D" parent="." unique_id=714592590]
 
 [node name="RefuelStation" parent="Objects" unique_id=1130668928 instance=ExtResource("4_d61mw")]
-position = Vector2(-216, -40)
+position = Vector2(-8, -40)
+stored_fuel = 75.0
+push_cost = -15.0
 
 [node name="SlidingDoor" parent="Objects" unique_id=1479868204 instance=ExtResource("3_wuq67")]
 position = Vector2(-248, 8)
@@ -94,81 +104,170 @@ position = Vector2(200, 8)
 [node name="SlidingDoor3" parent="Objects" unique_id=226978572 instance=ExtResource("3_wuq67")]
 position = Vector2(264, 8)
 
+[node name="Suitcase" parent="Objects" unique_id=557592591 instance=ExtResource("5_jtqkm")]
+position = Vector2(-56, -8)
+
+[node name="Suitcase10" parent="Objects" unique_id=393853697 instance=ExtResource("5_jtqkm")]
+position = Vector2(-40, -8)
+
+[node name="Suitcase19" parent="Objects" unique_id=1010007951 instance=ExtResource("5_jtqkm")]
+position = Vector2(-40, -24)
+
+[node name="Suitcase20" parent="Objects" unique_id=937943712 instance=ExtResource("5_jtqkm")]
+position = Vector2(-8, -8)
+
+[node name="Suitcase22" parent="Objects" unique_id=1415525662 instance=ExtResource("5_jtqkm")]
+position = Vector2(-24, 40)
+
+[node name="Suitcase23" parent="Objects" unique_id=2081416211 instance=ExtResource("5_jtqkm")]
+position = Vector2(-8, 24)
+
+[node name="Suitcase21" parent="Objects" unique_id=271609599 instance=ExtResource("5_jtqkm")]
+position = Vector2(-24, -8)
+
+[node name="Suitcase11" parent="Objects" unique_id=925566382 instance=ExtResource("5_jtqkm")]
+position = Vector2(-88, -40)
+
+[node name="Suitcase12" parent="Objects" unique_id=714844562 instance=ExtResource("5_jtqkm")]
+position = Vector2(-72, 56)
+
+[node name="Suitcase3" parent="Objects" unique_id=2101907285 instance=ExtResource("5_jtqkm")]
+position = Vector2(-136, -8)
+
+[node name="Suitcase4" parent="Objects" unique_id=1477423809 instance=ExtResource("5_jtqkm")]
+position = Vector2(-152, -8)
+
+[node name="Suitcase5" parent="Objects" unique_id=82139829 instance=ExtResource("5_jtqkm")]
+position = Vector2(-120, 8)
+
+[node name="Suitcase6" parent="Objects" unique_id=756791923 instance=ExtResource("5_jtqkm")]
+position = Vector2(-104, 8)
+
+[node name="Suitcase2" parent="Objects" unique_id=1964408805 instance=ExtResource("5_jtqkm")]
+position = Vector2(-24, 8)
+
+[node name="Suitcase8" parent="Objects" unique_id=933806032 instance=ExtResource("5_jtqkm")]
+position = Vector2(-88, 8)
+
+[node name="Suitcase13" parent="Objects" unique_id=624905903 instance=ExtResource("5_jtqkm")]
+position = Vector2(72, 24)
+
+[node name="Suitcase14" parent="Objects" unique_id=1696727796 instance=ExtResource("5_jtqkm")]
+position = Vector2(136, 24)
+
+[node name="Suitcase15" parent="Objects" unique_id=1708095115 instance=ExtResource("5_jtqkm")]
+position = Vector2(168, -8)
+
+[node name="Suitcase16" parent="Objects" unique_id=1890335068 instance=ExtResource("5_jtqkm")]
+position = Vector2(168, 8)
+
+[node name="Suitcase18" parent="Objects" unique_id=1623264790 instance=ExtResource("5_jtqkm")]
+position = Vector2(184, -8)
+
+[node name="Suitcase17" parent="Objects" unique_id=1743220787 instance=ExtResource("5_jtqkm")]
+position = Vector2(136, 8)
+
+[node name="Box2" parent="Objects" unique_id=1510007950 instance=ExtResource("6_khw7q")]
+position = Vector2(168, -40)
+
+[node name="Box3" parent="Objects" unique_id=1380009147 instance=ExtResource("6_khw7q")]
+position = Vector2(232, 56)
+
+[node name="Box4" parent="Objects" unique_id=444555158 instance=ExtResource("6_khw7q")]
+position = Vector2(88, 56)
+
+[node name="Box5" parent="Objects" unique_id=398015047 instance=ExtResource("6_khw7q")]
+position = Vector2(-136, 56)
+
 [node name="Passengers" type="Node2D" parent="." unique_id=1031043071]
-visible = false
 
 [node name="Passenger" parent="Passengers" unique_id=66109474 instance=ExtResource("12_ioee8")]
-position = Vector2(-168, 8)
-is_pushable = true
-is_solid = false
-
-[node name="Passenger2" parent="Passengers" unique_id=136939786 instance=ExtResource("12_ioee8")]
-position = Vector2(-88, 8)
-passenger_name = "Prole"
-texture = ExtResource("13_6jvqt")
-has_dialog = true
+position = Vector2(-152, 24)
+texture = ExtResource("16_h2p7i")
 is_pushable = true
 is_solid = false
 
 [node name="Passenger4" parent="Passengers" unique_id=260435936 instance=ExtResource("12_ioee8")]
-position = Vector2(-136, -40)
+position = Vector2(-136, -24)
 texture = ExtResource("14_o4inr")
+is_pushable = true
+is_solid = false
+
+[node name="Passenger13" parent="Passengers" unique_id=1874071934 instance=ExtResource("12_ioee8")]
+position = Vector2(-152, -40)
 is_pushable = true
 is_solid = false
 
 [node name="Passenger5" parent="Passengers" unique_id=2081801023 instance=ExtResource("12_ioee8")]
 position = Vector2(-136, 24)
-texture = ExtResource("15_u88aq")
+texture = ExtResource("10_d61mw")
 is_pushable = true
 is_solid = false
 
 [node name="Passenger6" parent="Passengers" unique_id=1820735691 instance=ExtResource("12_ioee8")]
-position = Vector2(-72, 40)
+position = Vector2(-72, 24)
 texture = ExtResource("14_o4inr")
 is_pushable = true
 is_solid = false
 
 [node name="Passenger8" parent="Passengers" unique_id=695613496 instance=ExtResource("12_ioee8")]
-position = Vector2(-24, -8)
+position = Vector2(-88, 56)
 is_pushable = true
 is_solid = false
 
 [node name="Passenger9" parent="Passengers" unique_id=582945211 instance=ExtResource("12_ioee8")]
-position = Vector2(56, -8)
+position = Vector2(-24, 24)
 texture = ExtResource("13_6jvqt")
 is_pushable = true
 is_solid = false
 
 [node name="Passenger11" parent="Passengers" unique_id=2072936044 instance=ExtResource("12_ioee8")]
 position = Vector2(232, -40)
-passenger_name = "Thief"
-texture = ExtResource("16_h2p7i")
+passenger_name = "Earl"
+texture = ExtResource("12_3ac47")
 is_pushable = true
 is_solid = false
 
 [node name="Passenger10" parent="Passengers" unique_id=510543578 instance=ExtResource("12_ioee8")]
-position = Vector2(56, -24)
+position = Vector2(-72, -24)
 texture = ExtResource("15_u88aq")
 is_pushable = true
 is_solid = false
 
 [node name="Passenger12" parent="Passengers" unique_id=281562281 instance=ExtResource("12_ioee8")]
-position = Vector2(56, 40)
-passenger_name = "Officer"
-texture = ExtResource("17_ioee8")
-has_dialog = true
+position = Vector2(-8, 56)
 is_pushable = true
 is_solid = false
 
-[node name="Passenger7" parent="Passengers" unique_id=684689612 instance=ExtResource("12_ioee8")]
-position = Vector2(-8, -24)
-texture = ExtResource("14_o4inr")
+[node name="Passenger14" parent="Passengers" unique_id=960536632 instance=ExtResource("12_ioee8")]
+position = Vector2(72, 8)
+texture = ExtResource("11_vio1i")
 is_pushable = true
 is_solid = false
 
-[node name="Passenger3" parent="Passengers" unique_id=1125052853 instance=ExtResource("12_ioee8")]
-position = Vector2(-72, 8)
-passenger_name = "Prosperos"
+[node name="Passenger15" parent="Passengers" unique_id=1708156356 instance=ExtResource("12_ioee8")]
+position = Vector2(88, 24)
+texture = ExtResource("12_khw7q")
+is_pushable = true
+is_solid = false
+
+[node name="Passenger17" parent="Passengers" unique_id=647708356 instance=ExtResource("12_ioee8")]
+position = Vector2(120, -8)
+texture = ExtResource("12_khw7q")
+is_pushable = true
+is_solid = false
+
+[node name="Passenger16" parent="Passengers" unique_id=2022618693 instance=ExtResource("12_ioee8")]
+position = Vector2(88, -24)
 texture = ExtResource("18_vdlwo")
 is_pushable = true
 is_solid = false
+
+[node name="Stolen Wallet" parent="." unique_id=33318948 instance=ExtResource("14_wuq67")]
+position = Vector2(-136, 56)
+item_name = "Stolen Wallet"
+item_texture = ExtResource("17_3ac47")
+z_index_offset = -2
+
+[node name="drink_machine" parent="." unique_id=207439878 instance=ExtResource("19_bbaia")]
+position = Vector2(88, -40)

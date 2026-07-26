@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bavdacpf630qe"]
+
+[ext_resource type="Script" uid="uid://d2sw1a8mwu3p2" path="res://src/grid_node.gd" id="1_py87w"]
+[ext_resource type="Texture2D" uid="uid://d07ov04kv31b7" path="res://assets/sprites/coffee_machine.png" id="2_svf73"]
+
+[node name="drink_machine" type="Area2D" unique_id=207439878]
+script = ExtResource("1_py87w")
+push_cost = 10.0
+metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510078233]
+position = Vector2(0, -13)
+texture = ExtResource("2_svf73")
