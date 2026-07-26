@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Jeevis_MainTheme.mp3-4cd8a1f1d3dd672975253acf
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
