@@ -224,7 +224,7 @@ position = Vector2(-168, 40)
 position = Vector2(-136, 40)
 
 [node name="Punch Card" parent="Objects" unique_id=33318948 instance=ExtResource("10_ovxt2")]
-position = Vector2(-104, 56)
+position = Vector2(-168, 24)
 item_name = "Punch Card"
 item_texture = ExtResource("11_duhk2")
 z_index_offset = -2
