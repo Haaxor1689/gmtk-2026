@@ -3,10 +3,18 @@
 [ext_resource type="Script" uid="uid://vky2m0h1a7qu" path="res://src/characters/player.gd" id="1_rxibo"]
 [ext_resource type="Texture2D" uid="uid://dll6j6h3lf1nb" path="res://assets/sprites/characters/player.png" id="2_3ikja"]
 
-[node name="Player" type="Node2D" unique_id=2070835607]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(8, 8)
+
+[node name="Player" type="Area2D" unique_id=253421152]
+collision_mask = 2
 script = ExtResource("1_rxibo")
 push_cost = 1.0
+metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1003064723]
 texture = ExtResource("2_3ikja")
 offset = Vector2(0, -14)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=712930887]
+shape = SubResource("RectangleShape2D_g4v7s")

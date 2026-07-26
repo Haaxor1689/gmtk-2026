@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://csdb644nuclyp"]
 
-[ext_resource type="Script" uid="uid://d2sw1a8mwu3p2" path="res://src/grid_node.gd" id="1_ca7lu"]
-[ext_resource type="Texture2D" uid="uid://bwn5r8ei6m58u" path="res://assets/sprites/heavy_box.png" id="2_ldhnw"]
+[ext_resource type="Script" uid="uid://dd62m0p6h11cl" path="res://src/objects/suitcase.gd" id="1_ca7lu"]
+[ext_resource type="Texture2D" uid="uid://y7tfa8vs0jkt" path="res://assets/sprites/luggage_large.png" id="2_ca7lu"]
 
-[node name="heavy_suitcase" type="Node2D" unique_id=1172009491]
+[node name="HeavySuitcase" type="Area2D" unique_id=1455797523]
 script = ExtResource("1_ca7lu")
 is_pushable = true
 push_cost = 3.5
@@ -11,4 +11,5 @@ metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510078233]
 position = Vector2(0, -5)
-texture = ExtResource("2_ldhnw")
+texture = ExtResource("2_ca7lu")
+vframes = 4

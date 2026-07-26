@@ -226,7 +226,6 @@ is_solid = false
 position = Vector2(-88, 8)
 passenger_name = "Prole"
 texture = ExtResource("6_8s5si")
-has_dialog = true
 is_pushable = true
 is_solid = false
 
@@ -276,7 +275,6 @@ is_solid = false
 position = Vector2(56, 40)
 passenger_name = "Officer"
 texture = ExtResource("17_ui3ku")
-has_dialog = true
 is_pushable = true
 is_solid = false
 

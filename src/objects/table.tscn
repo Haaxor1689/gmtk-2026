@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d2sw1a8mwu3p2" path="res://src/grid_node.gd" id="1_uf358"]
 [ext_resource type="Texture2D" uid="uid://bhscje8hks4yc" path="res://assets/sprites/table.png" id="2_uf358"]
 
-[node name="Table" type="Node2D" unique_id=1172009491]
+[node name="Table" type="Area2D" unique_id=207439878]
 script = ExtResource("1_uf358")
 push_cost = 10.0
 metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"

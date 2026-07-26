@@ -63,7 +63,6 @@ func death_check() -> void:
   await Global.play_line(
     Lines.Args.new(random_line[0])
       .node(self)
-      .offset(38.0)
       .audio(load(random_line[1]) as AudioStream)
   )
   restart_level()
@@ -81,7 +80,6 @@ func try_play_low_fuel_warning() -> void:
   Global.play_line(
     Lines.Args.new(random_line[0])
       .node(self)
-      .offset(38.0)
       .audio(load(random_line[1]) as AudioStream)
   )
   fuel_warning_timer = Timer.new()
