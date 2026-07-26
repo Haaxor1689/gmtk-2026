@@ -21,6 +21,8 @@ signal inventory_changed()
 
 var current_level: Node = null
 
+var merrit: int = 0
+
 var restart_level_path: String
 var restart_spawn_position := Vector2.ZERO
 var restart_inventory: Array[InventoryItem] = []
@@ -66,6 +68,8 @@ func change_scene(new_level: PackedScene, new_player_position: Vector2) -> void:
 	restart_inventory = current_inventory.duplicate()
 	inventory_changed.emit()
 
+	player.cool_fuel = max(player.cool_fuel, 75.0)
+
 	restart_fuel = player.cool_fuel
 	fuel_changed.emit(restart_fuel)
 
@@ -106,7 +110,7 @@ func _ready() -> void:
 	scene_fade.visible = true
 	player = PLAYER_SCENE.instantiate() as GridNode
 	subviewport.add_child(player)
-	change_scene(load("res://src/levels/level4.tscn"), initial_player_spawn_position)
+	change_scene(load("res://src/levels/level1.tscn"), initial_player_spawn_position)
 
 func disable_player_input() -> void:
 	input_disabled = true

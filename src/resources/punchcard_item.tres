@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://vfmepcw1e26n"]
 
-[ext_resource type="Texture2D" uid="uid://mxs03iud4a3l" path="res://assets/sprites/wallet.png" id="1_d5y5c"]
 [ext_resource type="Script" uid="uid://cae6g565bbs6l" path="res://src/objects/inventory_item.gd" id="1_inv"]
+[ext_resource type="Texture2D" uid="uid://cl4b8kc5e68nb" path="res://assets/sprites/punchcard.png" id="2_tex"]
 
 [resource]
 script = ExtResource("1_inv")
-item_name = "Stolen Wallet"
-item_texture = ExtResource("1_d5y5c")
+item_name = "Punch Card"
+item_texture = ExtResource("2_tex")

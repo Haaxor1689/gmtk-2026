@@ -13,6 +13,7 @@ size = Vector2(64, 64)
 collision_layer = 2
 script = ExtResource("1_mqd1r")
 texture = ExtResource("2_ngfac")
+is_pushable = true
 metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
 
 [node name="LabelRange" type="CollisionShape2D" parent="." unique_id=249370892]
@@ -27,3 +28,6 @@ debug_color = Color(0.6039216, 0.3764706, 0.98039216, 0.039215688)
 texture = ExtResource("2_ngfac")
 offset = Vector2(0, -14)
 
+[node name="item_timer" type="Timer" parent="." unique_id=1534841799]
+wait_time = 15.0
+one_shot = true
