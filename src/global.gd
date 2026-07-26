@@ -36,7 +36,11 @@ var input_disabled := true
 const SCENE_FADE_DURATION := 0.5
 var is_changing_scene := false
 
-const FLOATING_TEXT_SCENE: PackedScene = preload("res://src/ui/floating_text.tscn")
+const FLOATING_TEXT_SCENE_PATHS := [
+	"res://src/ui/floating_text.tscn",
+	"res://src/UI/floating_text.tscn"
+]
+var floating_text_scene: PackedScene = null
 var playing_floating_texts: Dictionary = {}
 
 const TILE_SIZE := 16
@@ -108,10 +112,23 @@ func fade_from_black() -> void:
 	await tween.finished
 
 func _ready() -> void:
+	floating_text_scene = _load_floating_text_scene()
 	scene_fade.visible = true
 	player = PLAYER_SCENE.instantiate() as GridNode
 	subviewport.add_child(player)
 	change_scene(load("res://src/levels/level1.tscn"), initial_player_spawn_position)
+
+func _load_floating_text_scene() -> PackedScene:
+	for scene_path in FLOATING_TEXT_SCENE_PATHS:
+		if !ResourceLoader.exists(scene_path, "PackedScene"):
+			continue
+
+		var scene := load(scene_path) as PackedScene
+		if scene:
+			return scene
+
+	push_error("Could not load floating text scene from known paths.")
+	return null
 
 func disable_player_input() -> void:
 	input_disabled = true
@@ -136,6 +153,9 @@ func play_line(args: Lines.Args) -> void:
 	if args == null || args._line.is_empty():
 		return
 
+	if floating_text_scene == null:
+		return
+
 	var node_key := args._node.get_instance_id() if args._node else -1
 
 	var active = playing_floating_texts.get(node_key, null)
@@ -143,7 +163,7 @@ func play_line(args: Lines.Args) -> void:
 		active.queue_free()
 		playing_floating_texts.erase(node_key)
 
-	var floating_text := FLOATING_TEXT_SCENE.instantiate()
+	var floating_text := floating_text_scene.instantiate()
 	playing_floating_texts[node_key] = floating_text
 	ui_layer.add_child(floating_text)
 	await floating_text.play_line(args)
@@ -154,6 +174,9 @@ func play_line(args: Lines.Args) -> void:
 		floating_text.queue_free()
 
 func floating_label(duration: float, content: Variant, node: Node2D = null, y_offset: float = 32.0) -> Node:
+	if floating_text_scene == null:
+		return null
+
 	var node_key := node.get_instance_id() if node else -1
 
 	var active = playing_floating_texts.get(node_key, null)
@@ -161,7 +184,7 @@ func floating_label(duration: float, content: Variant, node: Node2D = null, y_of
 		active.queue_free()
 		playing_floating_texts.erase(node_key)
 
-	var floating_text := FLOATING_TEXT_SCENE.instantiate()
+	var floating_text := floating_text_scene.instantiate()
 	playing_floating_texts[node_key] = floating_text
 	ui_layer.add_child(floating_text)
 
