@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://c16penhbhnhph" path="res://src/tilemap/carriage.tres" id="3_m7a4q"]
 [ext_resource type="PackedScene" uid="uid://pqroiyaaa48t" path="res://src/UI/ui.tscn" id="5_kfmdv"]
 [ext_resource type="AudioStream" uid="uid://c6qcvjxxenqkn" path="res://assets/music/Jeevis_MainTheme.mp3" id="6_oycrk"]
-[ext_resource type="AudioStream" path="res://assets/sfx/Game over sound.mp3" id="7_lp3wm"]
+[ext_resource type="AudioStream" uid="uid://vng402prv6ap" path="res://assets/sfx/game_over.wav" id="7_lp3wm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pribe"]
 shader = ExtResource("1_m7a4q")
