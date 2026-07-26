@@ -15,6 +15,14 @@ script = ExtResource("1_mqd1r")
 texture = ExtResource("2_ngfac")
 metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
 
+[node name="LabelRange" type="CollisionShape2D" parent="." unique_id=249370892]
+shape = SubResource("RectangleShape2D_nxsns")
+debug_color = Color(0, 0.6, 0.69803923, 0.078431375)
+
+[node name="AlertRange" type="CollisionShape2D" parent="." unique_id=114673440]
+shape = SubResource("RectangleShape2D_g4v7s")
+debug_color = Color(0.6039216, 0.3764706, 0.98039216, 0.039215688)
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=180074819]
 texture = ExtResource("2_ngfac")
 offset = Vector2(0, -14)
@@ -36,10 +44,3 @@ size_flags_horizontal = 4
 theme_override_constants/outline_size = 6
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="LabelRange" type="CollisionShape2D" parent="." unique_id=249370892]
-shape = SubResource("RectangleShape2D_nxsns")
-
-[node name="AlertRange" type="CollisionShape2D" parent="." unique_id=114673440]
-shape = SubResource("RectangleShape2D_g4v7s")
-debug_color = Color(0.60272, 0.37755698, 0.9810565, 0.41960785)

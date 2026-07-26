@@ -16,6 +16,9 @@ func _ready() -> void:
 	update_z_index()
 
 func _exit_tree() -> void:
+	if Engine.is_editor_hint():
+		return
+
 	Global.objects.erase(self)
 
 func update_z_index() -> void:
