@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://d4h3sdk8mqos2" path="res://assets/sprites/characters/Bandit_01.png" id="16_h2p7i"]
 [ext_resource type="Resource" uid="uid://dra2w3e0qlbxc" path="res://src/resources/wallet_item.tres" id="18_bbaia"]
 [ext_resource type="Texture2D" uid="uid://dvj6vmq43xu63" path="res://assets/sprites/characters/Prosper_f_01.png" id="18_vdlwo"]
-[ext_resource type="PackedScene" uid="uid://bavdacpf630qe" path="res://src/objects/drink_machine.tscn" id="19_bbaia"]
+[ext_resource type="PackedScene" uid="uid://coaopi2praeat" path="res://src/objects/dispenser.tscn" id="20_6jvqt"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_feg4a"]
 tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 1)
@@ -66,7 +66,7 @@ script = ExtResource("2_khw7q")
 is_solid = true
 
 [node name="Interior" type="TileMapLayer" parent="." unique_id=327208598]
-tile_map_data = PackedByteArray("AAD1//z/BgAAAAAAAAD1//3/BgAAAAEAAAD1//7/BgAAAAIAAAD4//z/BgAAAAAAABD4//3/BgAAAAEAABD4//7/BgAAAAIAABD5//z/BgAAAAAAAAD5//3/BgAAAAEAAAD5//7/BgAAAAIAAAD8//z/BgAAAAAAABD8//3/BgAAAAEAABD8//7/BgAAAAIAABD4/wEABgAAAAAAABD4/wIABgAAAAEAABD4/wMABgAAAAIAABD5/wEABgAAAAAAAAD5/wIABgAAAAEAAAD5/wMABgAAAAIAAAD8/wEABgAAAAAAABD8/wIABgAAAAEAABD8/wMABgAAAAIAABD9/wEABgAAAAAAAAD9/wIABgAAAAEAAAD9/wMABgAAAAIAAAAAAAMABgAAAAIAABD1/wEABgAAAAAAAAD1/wIABgAAAAEAAAD1/wMABgAAAAIAAAAEAPz/AwACAAIAAAAEAP3/AwACAAMAAAAFAP//AwAEAAIAAAAGAPz/AwACAAIAAAAGAP3/AwACAAMAAAANAP3/AwAJAAAAAAANAP7/AwAJAAIAAAAPAP7/AwAJAAIAAAAPAP3/AwAJAAAAAAANAAMAAwAJAAIAAAAPAAMAAwAJAAIAAAANAAIAAwAJAAAAAAAPAAIAAwAJAAAAAAACAAEAAwAHAAAAAAACAAIAAwAHAAEAAAACAAMAAwAHAAIAAAAEAAIAAwAEAAIAAAAGAAEAAwAIAAAAAAAGAAIAAwAIAAEAAAAGAAMAAwAIAAIAAAAHAAEAAwAHAAAAAAAHAAIAAwAHAAEAAAAHAAMAAwAHAAIAAAAJAAMAAwADAAIAAAALAAMAAwADAAIAAAAKAAIAAwAEAAIAAADx/wIAAwAJAAAAAADx/wMAAwAJAAIAAADy/wIAAwAJAAAAAADy/wMAAwAJAAIAAADz/wIAAwAJAAAAAADz/wMAAwAJAAIAAAACAPz/AwAHAAAAAAACAP3/AwAHAAEAAAACAP7/AwAHAAIAAAAIAPz/AwAIAAAAAAAIAP3/AwAIAAEAAAAIAP7/AwAIAAIAAAALAPz/AwAIAAAAAAALAP3/AwAIAAEAAAALAP7/AwAIAAIAAAAJAPz/AwAHAAAAAAAJAP3/AwAHAAEAAAAJAP7/AwAHAAIAAAAAAAIABgAAAAAAABDx//3/AwAJAAAAAADy//3/AwAJAAAAAADz//3/AwAJAAAAAADx//7/AwAJAAIAAADy//7/AwAJAAIAAADz//7/AwAJAAIAAAA=")
+tile_map_data = PackedByteArray("AAD1//z/BgAAAAAAAAD1//3/BgAAAAEAAAD1//7/BgAAAAIAAAD4//z/BgAAAAAAABD4//3/BgAAAAEAABD4//7/BgAAAAIAABD5//z/BgAAAAAAAAD5//3/BgAAAAEAAAD5//7/BgAAAAIAAAD8//z/BgAAAAAAABD8//3/BgAAAAEAABD8//7/BgAAAAIAABD4/wEABgAAAAAAABD4/wIABgAAAAEAABD4/wMABgAAAAIAABD5/wEABgAAAAAAAAD5/wIABgAAAAEAAAD5/wMABgAAAAIAAAD8/wEABgAAAAAAABD8/wIABgAAAAEAABD8/wMABgAAAAIAABD9/wEABgAAAAAAAAD9/wIABgAAAAEAAAD9/wMABgAAAAIAAAAAAAMABgAAAAIAABD1/wEABgAAAAAAAAD1/wIABgAAAAEAAAD1/wMABgAAAAIAAAAEAPz/AwACAAIAAAAEAP3/AwACAAMAAAAFAP//AwAEAAIAAAAGAPz/AwACAAIAAAAGAP3/AwACAAMAAAANAP3/AwAJAAAAAAANAP7/AwAJAAIAAAAPAP7/AwAJAAIAAAAPAP3/AwAJAAAAAAANAAMAAwAJAAIAAAAPAAMAAwAJAAIAAAANAAIAAwAJAAAAAAAPAAIAAwAJAAAAAAACAAEAAwAHAAAAAAACAAIAAwAHAAEAAAACAAMAAwAHAAIAAAAEAAIAAwAEAAIAAAAGAAEAAwAIAAAAAAAGAAIAAwAIAAEAAAAGAAMAAwAIAAIAAAAHAAEAAwAHAAAAAAAHAAIAAwAHAAEAAAAHAAMAAwAHAAIAAAAJAAMAAwADAAIAAAALAAMAAwADAAIAAAAKAAIAAwAEAAIAAADx/wIAAwAJAAAAAADx/wMAAwAJAAIAAADy/wIAAwAJAAAAAADy/wMAAwAJAAIAAADz/wIAAwAJAAAAAADz/wMAAwAJAAIAAAACAPz/AwAHAAAAAAACAP3/AwAHAAEAAAACAP7/AwAHAAIAAAAIAPz/AwAIAAAAAAAIAP3/AwAIAAEAAAAIAP7/AwAIAAIAAAALAPz/AwAIAAAAAAALAP3/AwAIAAEAAAALAP7/AwAIAAIAAAAJAPz/AwAHAAAAAAAJAP3/AwAHAAEAAAAJAP7/AwAHAAIAAAAAAAIABgAAAAAAABA=")
 tile_set = ExtResource("1_vio1i")
 collision_enabled = false
 script = ExtResource("2_khw7q")
@@ -85,7 +85,12 @@ script = ExtResource("2_khw7q")
 
 [node name="RefuelStation" parent="Objects" unique_id=1130668928 instance=ExtResource("4_d61mw")]
 position = Vector2(-8, -40)
-stored_fuel = 150.0
+stored_fuel = 125.0
+push_cost = -15.0
+
+[node name="RefuelStation2" parent="Objects" unique_id=1966166678 instance=ExtResource("4_d61mw")]
+position = Vector2(-216, -40)
+stored_fuel = 75.0
 push_cost = -15.0
 
 [node name="SlidingDoor" parent="Objects" unique_id=1479868204 instance=ExtResource("3_wuq67")]
@@ -223,6 +228,9 @@ is_pushable = true
 position = Vector2(232, -40)
 passenger_name = "Earl"
 texture = ExtResource("12_3ac47")
+lines_set = "prosp_m"
+wants_item = ExtResource("18_bbaia")
+time_to_get_item = 45.0
 is_pushable = true
 
 [node name="Passenger10" parent="Passengers" unique_id=510543578 instance=ExtResource("12_ioee8")]
@@ -254,10 +262,11 @@ position = Vector2(88, -24)
 texture = ExtResource("18_vdlwo")
 is_pushable = true
 
-[node name="Punchcard" parent="." unique_id=33318948 instance=ExtResource("14_wuq67")]
+[node name="Wallet" parent="." unique_id=33318948 instance=ExtResource("14_wuq67")]
 position = Vector2(-136, 56)
 item_data = ExtResource("18_bbaia")
 z_index_offset = -2
 
-[node name="drink_machine" parent="." unique_id=207439878 instance=ExtResource("19_bbaia")]
+[node name="Dispenser" parent="." unique_id=1531497183 instance=ExtResource("20_6jvqt")]
 position = Vector2(88, -40)
+item_data = ExtResource("9_6jvqt")

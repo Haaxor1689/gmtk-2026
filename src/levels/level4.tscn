@@ -5,11 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://d1lhydxk7ubma" path="res://src/objects/refuel_station.tscn" id="3_bdwop"]
 [ext_resource type="PackedScene" uid="uid://d10awnyfwx1am" path="res://src/objects/sliding_door.tscn" id="4_aw7ln"]
 [ext_resource type="PackedScene" uid="uid://ckhfe57bfi86m" path="res://src/characters/passenger.tscn" id="7_7c64a"]
+[ext_resource type="PackedScene" uid="uid://coaopi2praeat" path="res://src/objects/dispenser.tscn" id="10_fvq2s"]
+[ext_resource type="Resource" uid="uid://h3cyfmop4u0c" path="res://src/resources/water_item.tres" id="11_0w4fv"]
 [ext_resource type="Texture2D" uid="uid://b4x0qmgajwxt4" path="res://assets/sprites/characters/prosper_m_02.png" id="12_ktvol"]
+[ext_resource type="Resource" uid="uid://c7rgkl64axaf" path="res://src/resources/tea_item.tres" id="12_n5ra1"]
+[ext_resource type="Resource" uid="uid://dcgjok8o125w8" path="res://src/resources/coffee_item.tres" id="13_ofmyr"]
 [ext_resource type="Texture2D" uid="uid://b5hb7iskr1qgp" path="res://assets/sprites/characters/Prosper_f_02.png" id="14_u53du"]
 [ext_resource type="Texture2D" uid="uid://btbooicjh0s0o" path="res://assets/sprites/characters/prosper_m_01.png" id="15_mefbd"]
 [ext_resource type="Texture2D" uid="uid://dvj6vmq43xu63" path="res://assets/sprites/characters/Prosper_f_01.png" id="16_hrhgx"]
-[ext_resource type="PackedScene" uid="uid://bavdacpf630qe" path="res://src/objects/drink_machine.tscn" id="19_lyrwq"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_feg4a"]
 tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 1)
@@ -74,7 +77,7 @@ script = ExtResource("2_3peu3")
 
 [node name="RefuelStation" parent="Objects" unique_id=1130668928 instance=ExtResource("3_bdwop")]
 position = Vector2(136, 24)
-stored_fuel = 75.0
+stored_fuel = 150.0
 push_cost = -15.0
 
 [node name="SlidingDoor" parent="Objects" unique_id=1479868204 instance=ExtResource("4_aw7ln")]
@@ -84,6 +87,7 @@ player_spawn_position = Vector2(248, 8)
 
 [node name="SlidingDoor3" parent="Objects" unique_id=226978572 instance=ExtResource("4_aw7ln")]
 position = Vector2(264, 8)
+open_scene = "res://src/levels/level5.tscn"
 player_spawn_position = Vector2(-232, 8)
 
 [node name="Passengers" type="Node2D" parent="." unique_id=1031043071]
@@ -91,6 +95,9 @@ player_spawn_position = Vector2(-232, 8)
 [node name="Passenger" parent="Passengers" unique_id=1874071934 instance=ExtResource("7_7c64a")]
 position = Vector2(-184, -8)
 texture = ExtResource("16_hrhgx")
+lines_set = "prosp_w"
+wants_item = ExtResource("12_n5ra1")
+time_to_get_item = 45.0
 is_pushable = true
 
 [node name="Passenger2" parent="Passengers" unique_id=390761019 instance=ExtResource("7_7c64a")]
@@ -101,6 +108,8 @@ is_pushable = true
 [node name="Passenger3" parent="Passengers" unique_id=560283850 instance=ExtResource("7_7c64a")]
 position = Vector2(56, -24)
 texture = ExtResource("16_hrhgx")
+lines_set = "prosp_w"
+wants_item = ExtResource("12_n5ra1")
 is_pushable = true
 
 [node name="Passenger4" parent="Passengers" unique_id=34987338 instance=ExtResource("7_7c64a")]
@@ -121,6 +130,9 @@ is_pushable = true
 [node name="Passenger7" parent="Passengers" unique_id=2127174023 instance=ExtResource("7_7c64a")]
 position = Vector2(-40, -8)
 texture = ExtResource("15_mefbd")
+lines_set = "prosp_m"
+wants_item = ExtResource("12_n5ra1")
+time_to_get_item = 25.0
 is_pushable = true
 
 [node name="Passenger9" parent="Passengers" unique_id=681953853 instance=ExtResource("7_7c64a")]
@@ -131,16 +143,25 @@ is_pushable = true
 [node name="Passenger10" parent="Passengers" unique_id=1833202843 instance=ExtResource("7_7c64a")]
 position = Vector2(-216, 40)
 texture = ExtResource("12_ktvol")
+lines_set = "prosp_m"
+wants_item = ExtResource("13_ofmyr")
+time_to_get_item = 45.0
 is_pushable = true
 
 [node name="Passenger11" parent="Passengers" unique_id=2124515534 instance=ExtResource("7_7c64a")]
 position = Vector2(-104, 24)
 texture = ExtResource("12_ktvol")
+lines_set = "prosp_m"
+wants_item = ExtResource("13_ofmyr")
+time_to_get_item = 30.0
 is_pushable = true
 
 [node name="Passenger12" parent="Passengers" unique_id=21312260 instance=ExtResource("7_7c64a")]
 position = Vector2(24, 24)
 texture = ExtResource("12_ktvol")
+lines_set = "prosp_m"
+wants_item = ExtResource("11_0w4fv")
+time_to_get_item = 35.0
 is_pushable = true
 
 [node name="Passenger8" parent="Passengers" unique_id=1122317727 instance=ExtResource("7_7c64a")]
@@ -148,14 +169,14 @@ position = Vector2(88, 40)
 texture = ExtResource("15_mefbd")
 is_pushable = true
 
-[node name="drink_machine" parent="." unique_id=207439878 instance=ExtResource("19_lyrwq")]
+[node name="Dispenser" parent="." unique_id=1531497183 instance=ExtResource("10_fvq2s")]
 position = Vector2(184, 24)
+item_data = ExtResource("11_0w4fv")
 
-[node name="drink_machine4" parent="." unique_id=1372613932 instance=ExtResource("19_lyrwq")]
-position = Vector2(168, 24)
-
-[node name="drink_machine2" parent="." unique_id=335260341 instance=ExtResource("19_lyrwq")]
+[node name="Dispenser3" parent="." unique_id=525896744 instance=ExtResource("10_fvq2s")]
 position = Vector2(200, 24)
+item_data = ExtResource("12_n5ra1")
 
-[node name="drink_machine3" parent="." unique_id=1578028837 instance=ExtResource("19_lyrwq")]
+[node name="Dispenser2" parent="." unique_id=680739803 instance=ExtResource("10_fvq2s")]
 position = Vector2(216, 24)
+item_data = ExtResource("13_ofmyr")

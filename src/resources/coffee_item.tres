@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://dcgjok8o125w8"]
+
+[ext_resource type="Texture2D" uid="uid://dh81f5mjdj0om" path="res://assets/sprites/coffee_item.png" id="1_bb74p"]
+[ext_resource type="Script" uid="uid://cae6g565bbs6l" path="res://src/objects/inventory_item.gd" id="2_b158c"]
+
+[resource]
+script = ExtResource("2_b158c")
+item_name = "Cup of Coffee"
+item_texture = ExtResource("1_bb74p")

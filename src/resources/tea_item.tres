@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://c7rgkl64axaf"]
+
+[ext_resource type="Texture2D" uid="uid://o8dptfitiux1" path="res://assets/sprites/green_tea_02_item.png" id="1_5vaoa"]
+[ext_resource type="Script" uid="uid://cae6g565bbs6l" path="res://src/objects/inventory_item.gd" id="2_523kq"]
+
+[resource]
+script = ExtResource("2_523kq")
+item_name = "Cup of Tea"
+item_texture = ExtResource("1_5vaoa")
