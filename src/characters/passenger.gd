@@ -92,13 +92,6 @@ func _show_name_label() -> void:
 func _hide_name_label() -> void:
 	Global.floating_label(0.0, "", label_range)
 
-func _trigger_dialog() -> void:
-	# TODO: Connect to your dialogue manager scene.
-	print("Triggering dialogue for: ", passenger_name if passenger_name != "" else "Unnamed Passenger")
-
-func _pickup_passenger() -> void:
-	print("Picked up passenger: ", passenger_name if passenger_name != "" else "Unnamed Passenger")
-
 func _is_in_shape(expected_shape: CollisionShape2D, idx: int) -> bool:
 	var owner_id := shape_find_owner(idx)
 	if owner_id == -1:
@@ -150,8 +143,7 @@ func _on_area_shape_entered(_area_rid: RID, area: Area2D, _area_shape_index: int
 
 		item_timer.timeout.connect(func():
 			_clear_item_request_state()
-
-			# TODO: Handle what happens when the player fails to deliver the item in time.
+			SFX.play(SFX.fail_task)
 		)
 		add_child(item_timer)
 		item_timer.start()

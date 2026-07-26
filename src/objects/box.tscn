@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c6ixj0c287w2e"]
 
 [ext_resource type="Script" uid="uid://d2sw1a8mwu3p2" path="res://src/grid_node.gd" id="1_5os2w"]
-[ext_resource type="Texture2D" uid="uid://buscuygiebyne" path="res://assets/sprites/Wood_Box.png" id="2_5os2w"]
+[ext_resource type="Texture2D" uid="uid://chs1e8o3hbiyb" path="res://assets/sprites/Wood_Box.png" id="2_5os2w"]
 
 [node name="Box" type="Area2D" unique_id=1002237161]
 script = ExtResource("1_5os2w")
