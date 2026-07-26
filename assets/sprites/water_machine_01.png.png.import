@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chs1e8o3hbiyb"
-path="res://.godot/imported/Wood_Box.png-27b975818adaeba0540f2298c5667475.ctex"
+uid="uid://hd4mj56sdvh5"
+path="res://.godot/imported/water_machine_01.png.png-4f3f43eac7eadbd280f2d89f2f3d36ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Wood_Box.png"
-dest_files=["res://.godot/imported/Wood_Box.png-27b975818adaeba0540f2298c5667475.ctex"]
+source_file="res://assets/sprites/water_machine_01.png.png"
+dest_files=["res://.godot/imported/water_machine_01.png.png-4f3f43eac7eadbd280f2d89f2f3d36ee.ctex"]
 
 [params]
 

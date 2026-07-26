@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chs1e8o3hbiyb"
-path="res://.godot/imported/Wood_Box.png-27b975818adaeba0540f2298c5667475.ctex"
+uid="uid://ow1u2nr6mxik"
+path="res://.godot/imported/green_tea_item.png-8630b39ae964a7d03ef18ff092529f79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Wood_Box.png"
-dest_files=["res://.godot/imported/Wood_Box.png-27b975818adaeba0540f2298c5667475.ctex"]
+source_file="res://assets/sprites/green_tea_item.png"
+dest_files=["res://.godot/imported/green_tea_item.png-8630b39ae964a7d03ef18ff092529f79.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwn5r8ei6m58u"
-path="res://.godot/imported/heavy_box.png-c9732f245efac0664467b05378ce1609.ctex"
+uid="uid://fw0wstdafh5v"
+path="res://.godot/imported/red_tea_item.png-4c8baac5e871dbe0cd6eff1d5eaae7cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/heavy_box.png"
-dest_files=["res://.godot/imported/heavy_box.png-c9732f245efac0664467b05378ce1609.ctex"]
+source_file="res://assets/sprites/red_tea_item.png"
+dest_files=["res://.godot/imported/red_tea_item.png-4c8baac5e871dbe0cd6eff1d5eaae7cd.ctex"]
 
 [params]
 

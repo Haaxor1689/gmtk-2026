@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://coaopi2praeat"]
+
+[ext_resource type="Script" uid="uid://c1oxoooxtblix" path="res://src/objects/dispenser.gd" id="1_i2kq6"]
+[ext_resource type="Texture2D" uid="uid://hd4mj56sdvh5" path="res://assets/sprites/water_machine_01.png.png" id="2_i2kq6"]
+
+[node name="Dispenser" type="Area2D" unique_id=1531497183]
+script = ExtResource("1_i2kq6")
+texture = ExtResource("2_i2kq6")
+metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1286497948]
+position = Vector2(0, -12)
+texture = ExtResource("2_i2kq6")

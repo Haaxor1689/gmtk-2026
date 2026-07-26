@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgy2nwn1yfa5b"
-path="res://.godot/imported/box_fragile_broken.png-cd32b470cb686fb7d6ab5529b5200c55.ctex"
+uid="uid://s2td58fodp2i"
+path="res://.godot/imported/water_item.png-c441773a65a7faa6d933e6288b7ed4f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/box_fragile_broken.png"
-dest_files=["res://.godot/imported/box_fragile_broken.png-cd32b470cb686fb7d6ab5529b5200c55.ctex"]
+source_file="res://assets/sprites/water_item.png"
+dest_files=["res://.godot/imported/water_item.png-c441773a65a7faa6d933e6288b7ed4f1.ctex"]
 
 [params]
 

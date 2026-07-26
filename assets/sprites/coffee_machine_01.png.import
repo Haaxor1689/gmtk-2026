@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4hce6vdupxly"
-path="res://.godot/imported/barrel_02.png-20d64415692fdd5ac6a7769f9d549b1d.ctex"
+uid="uid://oo007enll07d"
+path="res://.godot/imported/coffee_machine_01.png-35eda420e54a2c111bc59a2144b8cfa4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/barrel_02.png"
-dest_files=["res://.godot/imported/barrel_02.png-20d64415692fdd5ac6a7769f9d549b1d.ctex"]
+source_file="res://assets/sprites/coffee_machine_01.png"
+dest_files=["res://.godot/imported/coffee_machine_01.png-35eda420e54a2c111bc59a2144b8cfa4.ctex"]
 
 [params]
 

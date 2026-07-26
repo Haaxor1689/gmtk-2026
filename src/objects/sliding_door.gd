@@ -5,7 +5,7 @@ var is_moving := false
 
 @export var open_scene: String
 @export var player_spawn_position := Vector2.ZERO
-@export var requires_item: String
+@export var requires_item: InventoryItem
 
 @onready var sprite := $Sprite2D
 @onready var sprite_material := sprite.material as ShaderMaterial
@@ -37,9 +37,10 @@ func try_move(_direction: Vector2, pushed_by: GridNode) -> GridNode:
 	return self
 
 func open_door():
-	if requires_item and !Global.current_inventory.any(func(i): return i[0] == requires_item):
+	if requires_item and !Global.has_item(requires_item):
+		var required_name := requires_item.item_name if !requires_item.item_name.is_empty() else "required item"
 		Global.play_line(
-			Lines.Args.new("You need the " + requires_item + " to open this door.").node(self)
+			Lines.Args.new("You need the " + required_name + " to open this door.").node(self)
 		)
 		return
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://555x5454yekq"
-path="res://.godot/imported/box_fragile.png-4ba42f1a9411f309e0b0408f351fbff3.ctex"
+uid="uid://o8dptfitiux1"
+path="res://.godot/imported/green_tea_02_item.png-99c5bfc0fcc4b9a68b5ba9ddc9cfc95b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/box_fragile.png"
-dest_files=["res://.godot/imported/box_fragile.png-4ba42f1a9411f309e0b0408f351fbff3.ctex"]
+source_file="res://assets/sprites/green_tea_02_item.png"
+dest_files=["res://.godot/imported/green_tea_02_item.png-99c5bfc0fcc4b9a68b5ba9ddc9cfc95b.ctex"]
 
 [params]
 

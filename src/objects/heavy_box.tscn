@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bwsnx88dd2pws"]
 
 [ext_resource type="Script" uid="uid://d2sw1a8mwu3p2" path="res://src/grid_node.gd" id="1_d4hmk"]
-[ext_resource type="Texture2D" uid="uid://bfvklbcld271p" path="res://assets/sprites/metal_box.png" id="2_d4hmk"]
+[ext_resource type="Texture2D" uid="uid://blv6t7dxnevv1" path="res://assets/sprites/metal_box.png" id="2_d4hmk"]
 
 [node name="Box" type="Area2D" unique_id=1619438562]
 script = ExtResource("1_d4hmk")
@@ -10,5 +10,5 @@ push_cost = 3.5
 metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510078233]
-position = Vector2(0, -5)
+position = Vector2(0, -6)
 texture = ExtResource("2_d4hmk")
