@@ -261,7 +261,7 @@ is_solid = false
 
 [node name="Passenger11" parent="Passengers" unique_id=2072936044 instance=ExtResource("5_tppch")]
 position = Vector2(232, -40)
-passenger_name = "Bandit"
+passenger_name = "Thief"
 texture = ExtResource("10_84a2j")
 is_pushable = true
 is_solid = false
