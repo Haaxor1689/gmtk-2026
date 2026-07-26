@@ -72,3 +72,50 @@ script = ExtResource("5_sjdex")
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
+
+[node name="EndGameScreen" type="MarginContainer" parent="." unique_id=710826445]
+visible = false
+z_index = 2500
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="EndGameScreen" unique_id=380941724]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="EndGameScreen/Panel" unique_id=961964065]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndGameScreen/Panel/CenterContainer" unique_id=875552910]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="EndGameScreen/Panel/CenterContainer/VBoxContainer" unique_id=355587629]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 44
+text = "Welcome to
+Newest York!"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="EndGameScreen/Panel/CenterContainer/VBoxContainer" unique_id=841227260]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 22
+text = "Jeevis Survived This Service,
+but will he survive the next?
+
+Thanks for playing!"
+horizontal_alignment = 1

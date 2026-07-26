@@ -9,6 +9,7 @@ extends Node
 
 @onready var tilemap: TileMapLayer = $SubViewportContainer/SubViewport/GlobalTilemap
 @onready var game_over_label: Label = $UI/game_over_label
+@onready var end_game_screen: Control = $UI/EndGameScreen
 @onready var game_over_sound: AudioStreamPlayer = $game_over_sfx
 @onready var main_theme: AudioStreamPlayer = $main_theme
 
@@ -123,6 +124,13 @@ func enable_player_input() -> void:
 			.node(player)
 			.audio(load(entry[1]) as AudioStream)
 	)
+
+func show_end_game_screen() -> void:
+	disable_player_input()
+	if has_node("Timer"):
+		$Timer.stop()
+	if end_game_screen:
+		end_game_screen.visible = true
 
 func play_line(args: Lines.Args) -> void:
 	if args == null || args._line.is_empty():

@@ -37,15 +37,19 @@ func try_move(_direction: Vector2, pushed_by: GridNode) -> GridNode:
 	return self
 
 func open_door():
-	if requires_item and !Global.has_item(requires_item):
-		var required_name := requires_item.item_name if !requires_item.item_name.is_empty() else "required item"
-		Global.play_line(
-			Lines.Args.new("You need the " + required_name + " to open this door.").node(self)
-		)
-		return
+	if requires_item:
+		if !Global.has_item(requires_item):
+			var required_name := requires_item.item_name if !requires_item.item_name.is_empty() else "required item"
+			Global.play_line(
+				Lines.Args.new("You need the " + required_name + " to open this door.").node(self)
+			)
+			return
+		else:
+			Global.consume_item(requires_item)
 
 	if open_scene:
 		Global.change_scene(load(open_scene), player_spawn_position)
+
 	is_moving = true
 	var tween := create_tween()
 	tween.tween_property(sprite, "position:y", sprite.position.y - 14, 1).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://blocwk7c5jgch"]
+
+[ext_resource type="Script" uid="uid://c62duerp6e2sd" path="res://src/objects/repair_station.gd" id="1_ga1bu"]
+[ext_resource type="Texture2D" uid="uid://dm7jvmr4lkcrh" path="res://assets/sprites/Final_Station_01.png.png" id="2_ga1bu"]
+[ext_resource type="PackedScene" uid="uid://b2hxwxx0f023i" path="res://src/objects/invisible_barricade.tscn" id="3_ga1bu"]
+
+[node name="RepairStation" type="Area2D" unique_id=1926180219]
+script = ExtResource("1_ga1bu")
+metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
+
+[node name="InvisibleBarricade" parent="." unique_id=261321260 instance=ExtResource("3_ga1bu")]
+position = Vector2(-16, 0)
+
+[node name="InvisibleBarricade2" parent="." unique_id=549186351 instance=ExtResource("3_ga1bu")]
+position = Vector2(16, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1177787493]
+position = Vector2(0, -12)
+texture = ExtResource("2_ga1bu")

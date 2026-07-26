@@ -9,10 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://bwsnx88dd2pws" path="res://src/objects/heavy_box.tscn" id="7_441dj"]
 [ext_resource type="PackedScene" uid="uid://cxq400pkk46pf" path="res://src/objects/barrel.tscn" id="9_t4noc"]
 [ext_resource type="PackedScene" uid="uid://bqgtb3odmditi" path="res://src/objects/item.tscn" id="10_ovxt2"]
-[ext_resource type="Texture2D" uid="uid://cl4b8kc5e68nb" path="res://assets/sprites/punchcard.png" id="11_duhk2"]
 [ext_resource type="Texture2D" uid="uid://bgxk5d4ntg1s4" path="res://assets/sprites/characters/Engineer_01.png" id="12_fhu77"]
 [ext_resource type="PackedScene" uid="uid://ckhfe57bfi86m" path="res://src/characters/passenger.tscn" id="12_ga44s"]
 [ext_resource type="Texture2D" uid="uid://cmlal0q5nwwf8" path="res://assets/sprites/characters/Engineer_02.png" id="13_23ay3"]
+[ext_resource type="PackedScene" uid="uid://blocwk7c5jgch" path="res://src/objects/repair_station.tscn" id="13_fhu77"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_feg4a"]
 tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 1)
@@ -89,7 +89,6 @@ player_spawn_position = Vector2(248, 8)
 
 [node name="SlidingDoor2" parent="Objects" unique_id=2091606564 instance=ExtResource("3_piim0")]
 position = Vector2(-24, 40)
-requires_item = "Punch Card"
 
 [node name="Box" parent="Objects" unique_id=1002237161 instance=ExtResource("5_y13qy")]
 position = Vector2(-216, 24)
@@ -231,8 +230,6 @@ position = Vector2(-136, 40)
 
 [node name="Punch Card" parent="Objects" unique_id=33318948 instance=ExtResource("10_ovxt2")]
 position = Vector2(-168, 24)
-item_name = "Punch Card"
-item_texture = ExtResource("11_duhk2")
 z_index_offset = -2
 
 [node name="Barrel" parent="Objects" unique_id=1734294026 instance=ExtResource("9_t4noc")]
@@ -263,8 +260,13 @@ position = Vector2(-8, 8)
 position = Vector2(144, 16)
 passenger_name = "Engineer"
 texture = ExtResource("12_fhu77")
+is_pushable = true
 
 [node name="Passenger3" parent="Passengers" unique_id=1673907546 instance=ExtResource("12_ga44s")]
 position = Vector2(208, 16)
 passenger_name = "Engineer"
 texture = ExtResource("13_23ay3")
+is_pushable = true
+
+[node name="RepairStation" parent="." unique_id=1926180219 instance=ExtResource("13_fhu77")]
+position = Vector2(168, 24)
