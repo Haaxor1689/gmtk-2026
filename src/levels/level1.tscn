@@ -158,7 +158,7 @@ position = Vector2(-152, 40)
 position = Vector2(-120, -40)
 
 [node name="Box35" parent="Objects" unique_id=282829468 instance=ExtResource("6_bn18y")]
-position = Vector2(120, -24)
+position = Vector2(120, -8)
 
 [node name="Box46" parent="Objects" unique_id=179027926 instance=ExtResource("6_bn18y")]
 position = Vector2(232, -40)
