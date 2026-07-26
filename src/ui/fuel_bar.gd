@@ -2,7 +2,6 @@ extends MarginContainer
 
 @onready var progress_bar := $TextureProgressBar
 
-const LOW_FUEL_THRESHOLD := 30.0
 const NORMAL_COLOR := Color(1, 1, 1, 1)
 const LOW_FUEL_PULSE_COLOR := Color(1, 0.25, 0.25, 1)
 const FUEL_GAIN_FLASH_COLOR := Color(0.35, 1, 0.35, 1)
@@ -32,13 +31,13 @@ func on_fuel_changed(new_fuel: float) -> void:
 	progress_bar.value = new_fuel
 
 	if fuel_gained > 0.0:
-		flash_gain(new_fuel < LOW_FUEL_THRESHOLD)
+		flash_gain(new_fuel < Global.LOW_FUEL_THRESHOLD)
 	else:
 		if fuel_gain_tween:
 			fuel_gain_tween.kill()
 			fuel_gain_tween = null
 
-		if new_fuel < LOW_FUEL_THRESHOLD:
+		if new_fuel < Global.LOW_FUEL_THRESHOLD:
 			start_low_fuel_pulse()
 		else:
 			stop_low_fuel_pulse()

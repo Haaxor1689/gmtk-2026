@@ -7,12 +7,13 @@ script = ExtResource("1_d02jk")
 
 [node name="Label" type="Label" parent="." unique_id=1146541178]
 visible = false
+z_index = 1001
 custom_minimum_size = Vector2(144, 0)
 offset_left = -72.0
 offset_top = -24.0
 offset_right = 72.0
+theme_override_constants/outline_size = 6
 horizontal_alignment = 1
 autowrap_mode = 3
-z_index = 1001
 
 [node name="VoiceLine" type="AudioStreamPlayer" parent="." unique_id=1692875764]

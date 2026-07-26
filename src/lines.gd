@@ -10,6 +10,31 @@ class LineGroup:
 		return _data[randi() % _data.size()]
 
 
+# Typed options for Global.play_line
+class Args:
+	extends RefCounted
+
+	var _line: String
+	var _node: Node2D = null
+	var _offset: float = 32.0
+	var _audio: AudioStream = null
+
+	func _init(value: String) -> void:
+		_line = value
+
+	func node(value: Node2D) -> Args:
+		_node = value
+		return self
+
+	func offset(value: float) -> Args:
+		_offset = value
+		return self
+
+	func audio(value: AudioStream) -> Args:
+		_audio = value
+		return self
+
+
 # ---------------------------------------------------------------------------
 # Speaker bark groups
 # ---------------------------------------------------------------------------

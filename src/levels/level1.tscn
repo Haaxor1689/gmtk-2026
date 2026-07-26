@@ -5,14 +5,14 @@
 [ext_resource type="PackedScene" uid="uid://c6ixj0c287w2e" path="res://src/objects/box.tscn" id="4_ih7hf"]
 [ext_resource type="PackedScene" uid="uid://bwsnx88dd2pws" path="res://src/objects/heavy_box.tscn" id="5_ghtb1"]
 [ext_resource type="PackedScene" uid="uid://d3wcs6il2qtfn" path="res://src/objects/fragile_box.tscn" id="6_bn18y"]
-[ext_resource type="PackedScene" uid="uid://bqgtb3odmditi" path="res://src/objects/punchcard.tscn" id="8_ipgu1"]
+[ext_resource type="PackedScene" uid="uid://bqgtb3odmditi" path="res://src/objects/item.tscn" id="8_ipgu1"]
 [ext_resource type="PackedScene" uid="uid://ckhfe57bfi86m" path="res://src/characters/passenger.tscn" id="8_juu1d"]
 [ext_resource type="PackedScene" uid="uid://d1lhydxk7ubma" path="res://src/objects/refuel_station.tscn" id="8_ou3gi"]
 [ext_resource type="Texture2D" uid="uid://dg8yrffd2c1q6" path="res://assets/sprites/characters/Mogul_Chaz.png" id="9_ipgu1"]
 [ext_resource type="PackedScene" uid="uid://d10awnyfwx1am" path="res://src/objects/sliding_door.tscn" id="9_juu1d"]
 [ext_resource type="PackedScene" uid="uid://b08buc2hp6a2d" path="res://src/objects/table.tscn" id="9_ql4hq"]
 [ext_resource type="PackedScene" uid="uid://cxq400pkk46pf" path="res://src/objects/barrel.tscn" id="10_5lu3u"]
-[ext_resource type="Texture2D" uid="uid://bockxi16k1e6p" path="res://assets/sprites/characters/prole_f_01.png" id="11_bsnmq"]
+[ext_resource type="Texture2D" uid="uid://cl4b8kc5e68nb" path="res://assets/sprites/punchcard.png" id="11_5lu3u"]
 
 [node name="Level" type="Node2D" unique_id=300137770]
 
@@ -44,6 +44,7 @@ script = ExtResource("3_feg4a")
 position = Vector2(264, 8)
 open_scene = "res://src/levels/level2.tscn"
 player_spawn_position = Vector2(-232, 8)
+requires_item = "Punchcard"
 
 [node name="RefuelStation" parent="Objects" unique_id=1130668928 instance=ExtResource("8_ou3gi")]
 position = Vector2(-56, -40)
@@ -199,9 +200,6 @@ position = Vector2(168, -8)
 [node name="Box6" parent="Objects" unique_id=1013090353 instance=ExtResource("5_ghtb1")]
 position = Vector2(-232, -40)
 
-[node name="Punchcard" parent="Objects" unique_id=870982027 instance=ExtResource("8_ipgu1")]
-position = Vector2(-24, 56)
-
 [node name="Table" parent="Objects" unique_id=1830964967 instance=ExtResource("9_ql4hq")]
 position = Vector2(40, -40)
 rotation = 3.1415927
@@ -219,16 +217,20 @@ position = Vector2(24, 40)
 [node name="Barrel3" parent="Objects" unique_id=1098525638 instance=ExtResource("10_5lu3u")]
 position = Vector2(8, 24)
 
+[node name="Punchcard" parent="Objects" unique_id=1618593848 instance=ExtResource("8_ipgu1")]
+position = Vector2(-24, 56)
+item_name = "Punchcard"
+item_texture = ExtResource("11_5lu3u")
+
 [node name="People" type="Node2D" parent="." unique_id=601915232]
 
 [node name="Passenger" parent="People" unique_id=66109474 instance=ExtResource("8_juu1d")]
 position = Vector2(-184, -24)
-appearance_texture = ExtResource("9_ipgu1")
 passenger_name = "Mogul Chaz"
+texture = ExtResource("9_ipgu1")
 z_index_offset = 1
 
 [node name="Passenger2" parent="People" unique_id=1781033314 instance=ExtResource("8_juu1d")]
 position = Vector2(248, 8)
-appearance_texture = ExtResource("11_bsnmq")
 passenger_name = "Prole"
 base_happiness = 25.0

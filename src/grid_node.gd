@@ -25,7 +25,7 @@ func grid_to_global(grid_position: Vector2) -> Vector2:
 	return Global.tilemap.to_global(local_center)
 
 func try_move(direction: Vector2, pushed_by: GridNode) -> GridNode:
-	if !is_pushable && pushed_by != Global.player:
+	if !is_pushable && pushed_by != self:
 		return null
 
 	var new_position := grid_pos + direction
