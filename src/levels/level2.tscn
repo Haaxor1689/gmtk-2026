@@ -71,10 +71,7 @@ script = ExtResource("2_k2dq7")
 is_solid = true
 
 [node name="Foreground" type="TileMapLayer" parent="." unique_id=1912049480]
-visible = false
 z_index = 1000
-position = Vector2(0, 21)
-tile_map_data = PackedByteArray("AADx/wMAAgACAAIAAADy/wMAAgACAAIAAADz/wMAAgACAAIAAAD0/wMAAgACAAIAAAD1/wMAAgACAAIAAAD2/wMAAgACAAIAAAD3/wMAAgACAAIAAAD4/wMAAgACAAIAAAD5/wMAAgACAAIAAAD6/wMAAgACAAIAAAD7/wMAAgACAAIAAAD8/wMAAgACAAIAAAD9/wMAAgACAAIAAAD+/wMAAgACAAIAAAD//wMAAgACAAIAAAAAAAMAAgACAAIAAAABAAMAAgACAAIAAAACAAMAAgACAAIAAAADAAMAAgACAAIAAAAEAAMAAgACAAIAAAAFAAMAAgACAAIAAAAGAAMAAgACAAIAAAAHAAMAAgACAAIAAAAIAAMAAgACAAIAAAAJAAMAAgACAAIAAAAKAAMAAgACAAIAAAALAAMAAgACAAIAAAAMAAMAAgACAAIAAAANAAMAAgACAAIAAAAOAAMAAgACAAIAAAAPAAMAAgACAAIAAAAPAAIAAgACAAEAAAAOAAIAAgACAAEAAAANAAIAAgACAAEAAAAMAAIAAgACAAEAAAALAAIAAgACAAEAAAAKAAIAAgACAAEAAAAJAAIAAgACAAEAAAAIAAIAAgACAAEAAAAHAAIAAgACAAEAAAAGAAIAAgACAAEAAAAFAAIAAgACAAEAAAAEAAIAAgACAAEAAAADAAIAAgACAAEAAAACAAIAAgACAAEAAAABAAIAAgACAAEAAAAAAAIAAgACAAEAAAD//wIAAgACAAEAAAD+/wIAAgACAAEAAAD9/wIAAgACAAEAAAD8/wIAAgACAAEAAAD7/wIAAgACAAEAAAD6/wIAAgACAAEAAAD5/wIAAgACAAEAAAD4/wIAAgACAAEAAAD3/wIAAgACAAEAAAD2/wIAAgACAAEAAAD1/wIAAgACAAEAAAD0/wIAAgACAAEAAADz/wIAAgACAAEAAADy/wIAAgACAAEAAADx/wIAAgACAAEAAAAQAAMAAgABAAEAAAAQAAIAAgABAAAAAADw/wMAAgAAAAEAAADw/wIAAgAAAAAAAADw/wAAAgAAAAEAAADw////AgAAAAAAAAAQAAAAAgABAAEAAAAQAP//AgABAAAAAAA=")
 tile_set = SubResource("TileSet_8s5si")
 collision_enabled = false
 script = ExtResource("2_k2dq7")
@@ -232,6 +229,7 @@ is_solid = false
 [node name="Passenger4" parent="Passengers" unique_id=260435936 instance=ExtResource("5_tppch")]
 position = Vector2(-136, -40)
 texture = ExtResource("7_ovyr1")
+lines_set = "prole_f"
 is_pushable = true
 is_solid = false
 
@@ -244,6 +242,7 @@ is_solid = false
 [node name="Passenger6" parent="Passengers" unique_id=1820735691 instance=ExtResource("5_tppch")]
 position = Vector2(-72, 40)
 texture = ExtResource("7_ovyr1")
+lines_set = "prole_f"
 is_pushable = true
 is_solid = false
 
@@ -275,12 +274,14 @@ is_solid = false
 position = Vector2(56, 40)
 passenger_name = "Officer"
 texture = ExtResource("17_ui3ku")
+lines_set = "police"
 is_pushable = true
 is_solid = false
 
 [node name="Passenger7" parent="Passengers" unique_id=684689612 instance=ExtResource("5_tppch")]
 position = Vector2(-8, -24)
 texture = ExtResource("7_ovyr1")
+lines_set = "prole_f"
 is_pushable = true
 is_solid = false
 
@@ -288,5 +289,6 @@ is_solid = false
 position = Vector2(-72, 8)
 passenger_name = "Prosperos"
 texture = ExtResource("7_c8fom")
+lines_set = "prosper_f"
 is_pushable = true
 is_solid = false

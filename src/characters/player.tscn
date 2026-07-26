@@ -12,9 +12,10 @@ script = ExtResource("1_rxibo")
 push_cost = 1.0
 metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=712930887]
+shape = SubResource("RectangleShape2D_g4v7s")
+debug_color = Color(0, 0.6, 0.7019608, 0.078431375)
+
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1003064723]
 texture = ExtResource("2_3ikja")
 offset = Vector2(0, -14)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=712930887]
-shape = SubResource("RectangleShape2D_g4v7s")
