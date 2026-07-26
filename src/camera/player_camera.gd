@@ -49,3 +49,8 @@ func get_train_shake(time: float) -> Vector2:
   var rumble_x = sin(time * TAU * rumble_frequency) * rumble_amplitude
 
   return Vector2(sway_x + rumble_x, bob_y)
+
+func world_to_viewport_pos_no_shake(world_pos: Vector2) -> Vector2:
+  var viewport_size: Vector2 = get_viewport().get_visible_rect().size
+  var camera_center: Vector2 = follow_cam_pos.round()
+  return ((world_pos - camera_center) / zoom) + (viewport_size * 0.5)

@@ -3,6 +3,7 @@ extends Node
 @onready var viewport_container := $SubViewportContainer
 @onready var subviewport := $SubViewportContainer/SubViewport
 @onready var level_container := $SubViewportContainer/SubViewport/LevelContainer
+@onready var ui_layer: Control = $UI
 @onready var player_camera := $SubViewportContainer/SubViewport/PlayerCamera
 @onready var scene_fade: ColorRect = $SceneFade
 
@@ -10,6 +11,7 @@ extends Node
 
 const PLAYER_SCENE: PackedScene = preload("res://src/characters/player.tscn")
 var player: GridNode
+@export var initial_player_spawn_position := Vector2(-216, 8)
 
 signal fuel_changed(new_fuel: float)
 signal inventory_changed()
@@ -18,12 +20,14 @@ var current_level: Node = null
 
 var restart_level_path: String
 var restart_spawn_position := Vector2.ZERO
-var restart_inventory := []
+var restart_inventory: Array[InventoryItem] = []
 var restart_fuel := 100.0
 
-var current_inventory := []
+var current_inventory: Array[InventoryItem] = []
 
 var input_disabled := true
+
+const SCENE_FADE_DURATION := 0.5
 var is_changing_scene := false
 
 const FLOATING_TEXT_SCENE: PackedScene = preload("res://src/ui/floating_text.tscn")
@@ -33,12 +37,7 @@ const TILE_SIZE := 16
 const GRID_NODE_BASE_Z_INDEX := 50
 const LOW_FUEL_THRESHOLD := 30.0
 
-const SCENE_FADE_DURATION := 0.5
-
-@export var initial_player_spawn_position := Vector2(-216, 8)
-
 var tilemaps: Array[TileMapLayer] = []
-
 var objects: Array[GridNode] = []
 
 func align_to_grid(node: GridNode) -> void:
@@ -48,7 +47,6 @@ func align_to_grid(node: GridNode) -> void:
 	node.global_position = tilemap.to_global(local_center)
 	node.grid_pos = cell
 	node.update_z_index()
-	print("Aligned ", node.name, " to grid at ", cell)
 
 func change_scene(new_level: PackedScene, new_player_position: Vector2) -> void:
 	if is_changing_scene:
@@ -91,7 +89,6 @@ func fade_to_black() -> void:
 	var tween := create_tween()
 	tween.tween_property(scene_fade, "modulate:a", 1.0, SCENE_FADE_DURATION)
 	await tween.finished
-	print("Fade to black complete")
 
 func fade_from_black() -> void:
 	if !scene_fade:
@@ -101,13 +98,12 @@ func fade_from_black() -> void:
 	var tween := create_tween()
 	tween.tween_property(scene_fade, "modulate:a", 0.0, SCENE_FADE_DURATION)
 	await tween.finished
-	print("Fade from black complete")
 
 func _ready() -> void:
 	scene_fade.visible = true
 	player = PLAYER_SCENE.instantiate() as GridNode
 	subviewport.add_child(player)
-	change_scene(load("res://src/levels/level5.tscn"), initial_player_spawn_position)
+	change_scene(load("res://src/levels/level1.tscn"), initial_player_spawn_position)
 
 func disable_player_input() -> void:
 	input_disabled = true
@@ -134,17 +130,76 @@ func play_line(args: Lines.Args) -> void:
 
 	var floating_text := FLOATING_TEXT_SCENE.instantiate()
 	playing_floating_texts[node_key] = floating_text
-	level_container.add_child(floating_text)
+	ui_layer.add_child(floating_text)
 	await floating_text.play_line(args)
+	if playing_floating_texts.get(node_key, null) == floating_text:
+		playing_floating_texts.erase(node_key)
 
 	if is_instance_valid(floating_text):
 		floating_text.queue_free()
 
-func collect_item(item_name: String, texture_path: String) -> void:
-	# Check if item already collected
-	for item in current_inventory:
-		if item[0] == item_name:
-			return
+func floating_label(duration: float, content: Variant, node: Node2D = null, y_offset: float = 32.0) -> Node:
+	var node_key := node.get_instance_id() if node else -1
 
-	current_inventory.append([item_name, texture_path])
+	var active = playing_floating_texts.get(node_key, null)
+	if active:
+		active.queue_free()
+		playing_floating_texts.erase(node_key)
+
+	var floating_text := FLOATING_TEXT_SCENE.instantiate()
+	playing_floating_texts[node_key] = floating_text
+	ui_layer.add_child(floating_text)
+
+	if duration < 0.0:
+		floating_text.floating_label(duration, content, node, y_offset)
+		return floating_text
+
+	await floating_text.floating_label(duration, content, node, y_offset)
+	if playing_floating_texts.get(node_key, null) == floating_text:
+		playing_floating_texts.erase(node_key)
+
+	if is_instance_valid(floating_text):
+		floating_text.queue_free()
+
+	return floating_text
+
+func _is_same_inventory_item(a: InventoryItem, b: InventoryItem) -> bool:
+	if a == null || b == null:
+		return false
+
+	if !a.resource_path.is_empty() && !b.resource_path.is_empty():
+		return a.resource_path == b.resource_path
+
+	return a == b
+
+func has_item(item: InventoryItem) -> bool:
+	if item == null:
+		return false
+
+	for owned_item in current_inventory:
+		if _is_same_inventory_item(owned_item, item):
+			return true
+
+	return false
+
+func collect_item(item: InventoryItem) -> void:
+	if item == null:
+		return
+
+	if has_item(item):
+		return
+
+	current_inventory.append(item)
 	inventory_changed.emit()
+
+func consume_item(item: InventoryItem) -> bool:
+	if item == null:
+		return false
+
+	for i in range(current_inventory.size()):
+		if _is_same_inventory_item(current_inventory[i], item):
+			current_inventory.remove_at(i)
+			inventory_changed.emit()
+			return true
+
+	return false
