@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://g2ktda8n508v" path="res://src/editor_sprite_2d.gd" id="2_73e05"]
 [ext_resource type="Texture2D" uid="uid://dv00t6ad5gcol" path="res://assets/sprites/editor_barricade.png" id="2_o1bte"]
 
-[node name="InvisibleBarricade" type="Node2D" unique_id=238698994]
+[node name="InvisibleBarricade" type="Area2D" unique_id=261321260]
 script = ExtResource("1_8t26t")
 metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
 

@@ -1,5 +1,5 @@
 class_name GridNode
-extends Node2D
+extends Area2D
 
 var grid_pos: Vector2 = Vector2.ZERO
 @export var is_pushable: bool = false
@@ -8,6 +8,9 @@ var grid_pos: Vector2 = Vector2.ZERO
 @export var z_index_offset: int = 0
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
+
 	Global.align_to_grid(self)
 	Global.objects.append(self)
 	update_z_index()
@@ -52,33 +55,30 @@ func try_move(direction: Vector2, pushed_by: GridNode) -> GridNode:
 
 func animate_move(target_position := grid_to_global(grid_pos)) -> void:
 	# Kill any existing tween
-	if get_meta("move_tween", []).size() > 0:
-		for t in get_meta("move_tween"):
-			t.kill()
+	if has_meta("move_tween"):
+		get_meta("move_tween").kill()
 
 	# Reset rotation and scale
 	rotation = 0.0
 	scale = Vector2.ONE
 
 	var tween = create_tween()
-	var scale_tween = create_tween()
+	set_meta("move_tween", tween)
+	tween.set_trans(Tween.TRANS_QUAD)
+	tween.set_ease(Tween.EASE_OUT)
 
-	var tweens := [tween, scale_tween]
-	set_meta("move_tween", tweens)
-	for t in tweens:
-		t.set_trans(Tween.TRANS_QUAD)
-		t.set_ease(Tween.EASE_OUT)
+	var arc_mult := 0.0
+	if self == Global.player:
+		arc_mult = 6.0
+	elif global_position == target_position:
+		arc_mult = 2.0
 
 	# Position tween with arc motion
 	var start_pos := global_position
 	tween.tween_method(
 		func(t: float):
 			var horizontal := start_pos.lerp(target_position, t)
-			var arc_height := sin(t * PI) * 6.0 # Small upward arc, 10 pixels max
+			var arc_height := sin(t * PI) * arc_mult
 			global_position = horizontal + Vector2(0, -arc_height)
 			update_z_index()
 	, 0.0, 1.0, 0.3)
-
-	# Scale: expand for first 0.15s, then reverse for next 0.15s
-	scale_tween.tween_property(self, "scale", Vector2(0.9, 1.1), 0.15)
-	scale_tween.tween_property(self, "scale", Vector2.ONE, 0.15)

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d2sw1a8mwu3p2" path="res://src/grid_node.gd" id="1_fsrt0"]
 [ext_resource type="Texture2D" uid="uid://q4umcu00kjby" path="res://assets/sprites/box.png" id="2_ole42"]
 
-[node name="suitcase" type="Node2D" unique_id=1172009491]
+[node name="Suitcase" type="Area2D" unique_id=557592591]
 script = ExtResource("1_fsrt0")
 is_pushable = true
 metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"

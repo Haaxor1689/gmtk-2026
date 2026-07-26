@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bs23sjc8277uv" path="res://assets/sprites/refuel_station_depleted.png" id="3_hfvmx"]
 [ext_resource type="PackedScene" uid="uid://b2hxwxx0f023i" path="res://src/objects/invisible_barricade.tscn" id="4_qhyp6"]
 
-[node name="RefuelStation" type="Node2D" unique_id=1130668928]
+[node name="RefuelStation" type="Area2D" unique_id=1966166678]
 script = ExtResource("1_mnnf2")
 push_cost = -10.0
 metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"

@@ -1,11 +1,8 @@
 [gd_scene format=3 uid="uid://bqgtb3odmditi"]
 
-[ext_resource type="Script" uid="uid://dnwuca4kej8xw" path="res://src/objects/item.gd" id="1_6cjqd"]
 [ext_resource type="Texture2D" uid="uid://cl4b8kc5e68nb" path="res://assets/sprites/punchcard.png" id="2_6cjqd"]
 
-[node name="Item" type="Node2D" unique_id=1172009491]
-script = ExtResource("1_6cjqd")
-push_cost = 1.0
+[node name="Item" type="Area2D" unique_id=33318948]
 metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510078233]

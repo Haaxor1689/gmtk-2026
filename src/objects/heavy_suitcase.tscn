@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d2sw1a8mwu3p2" path="res://src/grid_node.gd" id="1_ca7lu"]
 [ext_resource type="Texture2D" uid="uid://bwn5r8ei6m58u" path="res://assets/sprites/heavy_box.png" id="2_ldhnw"]
 
-[node name="heavy_suitcase" type="Node2D" unique_id=1172009491]
+[node name="HeavySuitcase" type="Area2D" unique_id=1455797523]
 script = ExtResource("1_ca7lu")
 is_pushable = true
 push_cost = 3.5

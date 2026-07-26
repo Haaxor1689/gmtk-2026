@@ -17,12 +17,12 @@ func try_move(_direction: Vector2, pushed_by: GridNode) -> GridNode:
 		Global.play_line(
 			Lines.Args.new("Full on Fuel!").node(self)
 		)
-		Global.play_line(
-			Lines.Args.new("Station is Empty!").node(self)
-		)
 
 
 	if stored_fuel <= 0:
+		Global.play_line(
+			Lines.Args.new("Station is Empty!").node(self)
+		)
 		sprite.visible = false
 		sprite_depleted.visible = true
 	else:

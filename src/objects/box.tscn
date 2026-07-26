@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://c6ixj0c287w2e"]
 
 [ext_resource type="Script" uid="uid://d2sw1a8mwu3p2" path="res://src/grid_node.gd" id="1_5os2w"]
-[ext_resource type="Texture2D" uid="uid://q4umcu00kjby" path="res://assets/sprites/box.png" id="2_s6jp8"]
+[ext_resource type="Texture2D" uid="uid://buwwrh5qxa4j1" path="res://assets/sprites/Wood_Box.png" id="2_5os2w"]
 
-[node name="Box" type="Node2D" unique_id=1172009491]
+[node name="Box" type="Area2D" unique_id=1002237161]
 script = ExtResource("1_5os2w")
 is_pushable = true
 metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510078233]
 position = Vector2(0, -5)
-texture = ExtResource("2_s6jp8")
+texture = ExtResource("2_5os2w")

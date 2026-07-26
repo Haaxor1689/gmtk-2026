@@ -14,7 +14,6 @@ config/name="gmtk2026"
 run/main_scene="uid://c5csdvh8lv0n"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 run/max_fps=60
-config/icon="uid://jn1poq1slkun"
 
 [autoload]
 
@@ -72,7 +71,7 @@ restart_level={
 [layer_names]
 
 2d_physics/layer_1="Player"
-2d_physics/layer_2="Solid"
+2d_physics/layer_2="Triggers"
 
 [physics]
 
