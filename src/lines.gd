@@ -242,8 +242,8 @@ class _ProspWBarks:
 		task_complete = LineGroup.new([
 			["What do you want, applause?", "res://assets/sounds/Prosp_W_0011.wav"],
 			["You did it, good for you.", "res://assets/sounds/Prosp_W_0012.wav"],
-			["Right then, ta-ta.", "res://assets/sounds/Prosp_W_0013.wav"],
-			["Oh you did it, oooh.", "res://assets/sounds/Prosp_W_0014.wav"],
+			["Right then, ta-ta.", "res://assets/sounds/Prosp_w_0013.wav"],
+			["Oh you did it, oooh.", "res://assets/sounds/PRosp_W_0014.wav"],
 			["This blind tin toys need a tune up", "res://assets/sounds/Prosp_W_0015.wav"],
 		])
 
@@ -264,7 +264,7 @@ class _ProspWUBarks:
 		task_complete = LineGroup.new([
 			["These robots need more legislation... To remove their rights.", "res://assets/sounds/Prosp_W_U_0011.wav"],
 			["My toaster is more capable than you.", "res://assets/sounds/Prosp_W_U_0012.wav"],
-			["I've had better service from toilet bots.", "res://assets/sounds/Prosp_W_U_0013.wav"],
+			["I've had better service from toilet bots.", "res://assets/sounds/PRosp_W_U_0013.wav"],
 			["Knowing that you touched this disgusts me.", "res://assets/sounds/Prosp_W_U_0014.wav"],
 			["Absolutely pathetic showing... Do better...", "res://assets/sounds/Prosp_W_U_0015.wav"],
 		])
