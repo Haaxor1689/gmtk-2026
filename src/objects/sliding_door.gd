@@ -37,8 +37,10 @@ func try_move(_direction: Vector2, pushed_by: GridNode) -> GridNode:
 	return self
 
 func open_door():
-	if requires_item and requires_item not in Global.current_inventory:
-		Global.play_line("You need the " + requires_item + " to open this door.", self)
+	if requires_item and !Global.current_inventory.any(func(i): return i[0] == requires_item):
+		Global.play_line(
+			Lines.Args.new("You need the " + requires_item + " to open this door.").node(self)
+		)
 		return
 
 	if open_scene:

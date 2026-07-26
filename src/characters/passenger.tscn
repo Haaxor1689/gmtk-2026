@@ -5,6 +5,7 @@
 
 [node name="Passenger" type="Node2D" unique_id=66109474]
 script = ExtResource("1_mqd1r")
+texture = ExtResource("2_ngfac")
 push_cost = 5.0
 metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
 
@@ -12,7 +13,7 @@ metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
 texture = ExtResource("2_ngfac")
 offset = Vector2(0, -14)
 
-[node name="name_label" type="Label" parent="." unique_id=486903455]
+[node name="NameLabel" type="Label" parent="." unique_id=486903455]
 oversampling_with_scale = 2
 anchors_preset = 7
 anchor_left = 0.5
@@ -26,6 +27,5 @@ offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/outline_size = 6
-text = "Character"
 horizontal_alignment = 1
 vertical_alignment = 1

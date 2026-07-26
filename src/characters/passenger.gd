@@ -1,25 +1,37 @@
+@tool
 extends GridNode
 
-@export var appearance_texture: Texture2D:
+@onready var name_label: Label = $NameLabel
+@export var passenger_name: String:
 	set(value):
-		appearance_texture = value
+		passenger_name = value
+		_update_name_label()
+
+@export var texture: Texture2D:
+	set(value):
+		texture = value
 		_update_sprite()
 
-@export var passenger_name: String = ""
+
 @export var has_dialog: bool = false
 @export var willpower: float = 1.0
 @export var base_happiness: float = 0.0
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var name_label: Label = $name_label
 
 func _ready() -> void:
+	if texture == null and sprite_2d and sprite_2d.texture:
+		texture = sprite_2d.texture
 	_update_sprite()
-	name_label.text = passenger_name
+	_update_name_label()
 
 func _update_sprite() -> void:
-	if sprite_2d and appearance_texture:
-		sprite_2d.texture = appearance_texture
+	if sprite_2d && texture:
+		sprite_2d.texture = texture
+
+func _update_name_label() -> void:
+	if name_label && passenger_name:
+		name_label.text = passenger_name
 
 func interact() -> void:
 	if has_dialog:
