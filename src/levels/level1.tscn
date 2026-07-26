@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://d10awnyfwx1am" path="res://src/objects/sliding_door.tscn" id="9_juu1d"]
 [ext_resource type="PackedScene" uid="uid://b08buc2hp6a2d" path="res://src/objects/table.tscn" id="9_ql4hq"]
 [ext_resource type="PackedScene" uid="uid://cxq400pkk46pf" path="res://src/objects/barrel.tscn" id="10_5lu3u"]
-[ext_resource type="Texture2D" uid="uid://cl4b8kc5e68nb" path="res://assets/sprites/punchcard.png" id="11_ql4hq"]
 [ext_resource type="Resource" uid="uid://vfmepcw1e26n" path="res://src/resources/punchcard_item.tres" id="11_item"]
 [ext_resource type="Resource" uid="uid://h3cyfmop4u0c" path="res://src/resources/water_item.tres" id="14_5lu3u"]
 [ext_resource type="PackedScene" uid="uid://coaopi2praeat" path="res://src/objects/dispenser.tscn" id="15_hrlh0"]
@@ -218,7 +217,7 @@ position = Vector2(24, 40)
 [node name="Barrel3" parent="Objects" unique_id=1098525638 instance=ExtResource("10_5lu3u")]
 position = Vector2(8, 24)
 
-[node name="Punch Card" parent="Objects" unique_id=1618593848 instance=ExtResource("8_ipgu1")]
+[node name="Punchcard" parent="Objects" unique_id=1618593848 instance=ExtResource("8_ipgu1")]
 position = Vector2(-24, 56)
 item_data = ExtResource("11_item")
 
@@ -228,13 +227,14 @@ item_data = ExtResource("11_item")
 position = Vector2(-184, -24)
 passenger_name = "Mogul Chaz"
 texture = ExtResource("9_ipgu1")
+is_pushable = true
 z_index_offset = 1
 
 [node name="Passenger2" parent="People" unique_id=1781033314 instance=ExtResource("8_juu1d")]
 position = Vector2(248, 8)
 passenger_name = "Prole"
 wants_item = ExtResource("14_5lu3u")
-is_pushable = true
+time_to_get_item = 30.0
 
 [node name="Dispenser" parent="People" unique_id=1531497183 instance=ExtResource("15_hrlh0")]
 position = Vector2(184, -40)

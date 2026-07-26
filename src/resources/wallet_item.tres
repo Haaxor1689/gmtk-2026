@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" format=3 uid="uid://dra2w3e0qlbxc"]
+
+[ext_resource type="Texture2D" uid="uid://mxs03iud4a3l" path="res://assets/sprites/wallet.png" id="1_63ij8"]
+[ext_resource type="Script" uid="uid://cae6g565bbs6l" path="res://src/objects/inventory_item.gd" id="2_t6jkd"]
+
+[resource]
+script = ExtResource("2_t6jkd")
+item_name = "Stolen Wallet"
+item_texture = ExtResource("1_63ij8")

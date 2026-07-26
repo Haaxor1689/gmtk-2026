@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://d3wcs6il2qtfn" path="res://src/objects/fragile_box.tscn" id="10_gdtc1"]
 [ext_resource type="PackedScene" uid="uid://cxq400pkk46pf" path="res://src/objects/barrel.tscn" id="11_mgq6v"]
 [ext_resource type="Texture2D" uid="uid://bqdhlihkgiom2" path="res://assets/sprites/characters/Police.png" id="17_ui3ku"]
+[ext_resource type="PackedScene" uid="uid://bqgtb3odmditi" path="res://src/objects/item.tscn" id="19_hkl2j"]
+[ext_resource type="Resource" uid="uid://dra2w3e0qlbxc" path="res://src/resources/wallet_item.tres" id="19_n7dl1"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_feg4a"]
 tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 1)
@@ -80,7 +82,7 @@ script = ExtResource("2_k2dq7")
 
 [node name="RefuelStation" parent="Objects" unique_id=1130668928 instance=ExtResource("5_f08ra")]
 position = Vector2(-216, -40)
-stored_fuel = 100.0
+stored_fuel = 200.0
 push_cost = -15.0
 
 [node name="SlidingDoor" parent="Objects" unique_id=1479868204 instance=ExtResource("6_ebaqd")]
@@ -224,7 +226,6 @@ is_pushable = true
 
 [node name="Passenger2" parent="Passengers" unique_id=136939786 instance=ExtResource("5_tppch")]
 position = Vector2(-88, 8)
-passenger_name = "Prole"
 texture = ExtResource("6_8s5si")
 is_pushable = true
 
@@ -255,7 +256,7 @@ texture = ExtResource("6_8s5si")
 is_pushable = true
 
 [node name="Passenger11" parent="Passengers" unique_id=2072936044 instance=ExtResource("5_tppch")]
-position = Vector2(232, -40)
+position = Vector2(232, -24)
 passenger_name = "Thief"
 texture = ExtResource("10_84a2j")
 is_pushable = true
@@ -280,7 +281,12 @@ is_pushable = true
 
 [node name="Passenger3" parent="Passengers" unique_id=1125052853 instance=ExtResource("5_tppch")]
 position = Vector2(-72, 8)
-passenger_name = "Prosperos"
 texture = ExtResource("7_c8fom")
-lines_set = "prosper_f"
+lines_set = "prosp_w"
+wants_item = ExtResource("19_n7dl1")
+time_to_get_item = 45.0
 is_pushable = true
+
+[node name="Punchcard" parent="." unique_id=33318948 instance=ExtResource("19_hkl2j")]
+position = Vector2(232, -40)
+item_data = ExtResource("19_n7dl1")

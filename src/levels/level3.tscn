@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d1lhydxk7ubma" path="res://src/objects/refuel_station.tscn" id="4_d61mw"]
 [ext_resource type="PackedScene" uid="uid://b7jrn3kuobc6a" path="res://src/objects/suitcase.tscn" id="5_jtqkm"]
 [ext_resource type="PackedScene" uid="uid://d3wcs6il2qtfn" path="res://src/objects/fragile_box.tscn" id="6_khw7q"]
+[ext_resource type="Resource" uid="uid://h3cyfmop4u0c" path="res://src/resources/water_item.tres" id="9_6jvqt"]
 [ext_resource type="Texture2D" uid="uid://dktuiaq7axyvn" path="res://assets/sprites/characters/Bandit_02.png" id="10_d61mw"]
 [ext_resource type="Texture2D" uid="uid://b5hb7iskr1qgp" path="res://assets/sprites/characters/Prosper_f_02.png" id="11_vio1i"]
 [ext_resource type="Texture2D" uid="uid://b4x0qmgajwxt4" path="res://assets/sprites/characters/prosper_m_02.png" id="12_3ac47"]
@@ -16,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bqgtb3odmditi" path="res://src/objects/item.tscn" id="14_wuq67"]
 [ext_resource type="Texture2D" uid="uid://w67m4ojj1afq" path="res://assets/sprites/characters/prole_m_02.png" id="15_u88aq"]
 [ext_resource type="Texture2D" uid="uid://d4h3sdk8mqos2" path="res://assets/sprites/characters/Bandit_01.png" id="16_h2p7i"]
-[ext_resource type="Texture2D" uid="uid://mxs03iud4a3l" path="res://assets/sprites/wallet.png" id="17_3ac47"]
+[ext_resource type="Resource" uid="uid://dra2w3e0qlbxc" path="res://src/resources/wallet_item.tres" id="18_bbaia"]
 [ext_resource type="Texture2D" uid="uid://dvj6vmq43xu63" path="res://assets/sprites/characters/Prosper_f_01.png" id="18_vdlwo"]
 [ext_resource type="PackedScene" uid="uid://bavdacpf630qe" path="res://src/objects/drink_machine.tscn" id="19_bbaia"]
 
@@ -84,7 +85,7 @@ script = ExtResource("2_khw7q")
 
 [node name="RefuelStation" parent="Objects" unique_id=1130668928 instance=ExtResource("4_d61mw")]
 position = Vector2(-8, -40)
-stored_fuel = 75.0
+stored_fuel = 150.0
 push_cost = -15.0
 
 [node name="SlidingDoor" parent="Objects" unique_id=1479868204 instance=ExtResource("3_wuq67")]
@@ -186,6 +187,8 @@ position = Vector2(-136, 56)
 [node name="Passenger" parent="Passengers" unique_id=66109474 instance=ExtResource("12_ioee8")]
 position = Vector2(-152, 24)
 texture = ExtResource("16_h2p7i")
+wants_item = ExtResource("9_6jvqt")
+time_to_get_item = 45.0
 is_pushable = true
 
 [node name="Passenger4" parent="Passengers" unique_id=260435936 instance=ExtResource("12_ioee8")]
@@ -251,10 +254,9 @@ position = Vector2(88, -24)
 texture = ExtResource("18_vdlwo")
 is_pushable = true
 
-[node name="Stolen Wallet" parent="." unique_id=33318948 instance=ExtResource("14_wuq67")]
+[node name="Punchcard" parent="." unique_id=33318948 instance=ExtResource("14_wuq67")]
 position = Vector2(-136, 56)
-item_name = "Stolen Wallet"
-item_texture = ExtResource("17_3ac47")
+item_data = ExtResource("18_bbaia")
 z_index_offset = -2
 
 [node name="drink_machine" parent="." unique_id=207439878 instance=ExtResource("19_bbaia")]

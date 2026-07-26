@@ -4,7 +4,9 @@
 [ext_resource type="Shader" uid="uid://3bi8ttk0oxhe" path="res://src/camera/subpixel.gdshader" id="1_m7a4q"]
 [ext_resource type="PackedScene" uid="uid://b5xugfhxsekkf" path="res://src/camera/player_camera.tscn" id="2_kfmdv"]
 [ext_resource type="TileSet" uid="uid://c16penhbhnhph" path="res://src/tilemap/carriage.tres" id="3_m7a4q"]
-[ext_resource type="PackedScene" uid="uid://pqroiyaaa48t" path="res://src/ui/ui.tscn" id="5_kfmdv"]
+[ext_resource type="PackedScene" uid="uid://pqroiyaaa48t" path="res://src/UI/ui.tscn" id="5_kfmdv"]
+[ext_resource type="AudioStream" uid="uid://c6qcvjxxenqkn" path="res://assets/music/Jeevis_MainTheme.mp3" id="6_oycrk"]
+[ext_resource type="AudioStream" uid="uid://cy7y31aueldbq" path="res://assets/sfx/Game over sound.mp3" id="7_lp3wm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pribe"]
 shader = ExtResource("1_m7a4q")
@@ -43,6 +45,22 @@ grow_horizontal = 1
 grow_vertical = 1
 scale = Vector2(3, 3)
 
+[node name="game_over_label" type="Label" parent="UI" unique_id=1269799157]
+visible = false
+z_index = 2000
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "Game Over
+The train arrived at Newest City"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="SceneFade" type="ColorRect" parent="." unique_id=833339591]
 visible = false
 z_index = 1001
@@ -51,3 +69,18 @@ offset_bottom = 1080.0
 scale = Vector2(6, 6)
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
+
+[node name="main_theme" type="AudioStreamPlayer" parent="." unique_id=1747225992]
+stream = ExtResource("6_oycrk")
+volume_db = -1.088
+autoplay = true
+
+[node name="Timer" type="Timer" parent="." unique_id=907335842]
+wait_time = 900.0
+one_shot = true
+autostart = true
+
+[node name="game_over_sfx" type="AudioStreamPlayer" parent="." unique_id=1081411735]
+stream = ExtResource("7_lp3wm")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

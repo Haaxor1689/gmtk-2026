@@ -139,6 +139,9 @@ position = Vector2(8, 56)
 [node name="Box25" parent="Objects" unique_id=224813057 instance=ExtResource("5_y13qy")]
 position = Vector2(-104, 8)
 
+[node name="Box26" parent="Objects" unique_id=113617953 instance=ExtResource("5_y13qy")]
+position = Vector2(-104, -40)
+
 [node name="Box11" parent="Objects" unique_id=496026563 instance=ExtResource("5_y13qy")]
 position = Vector2(-168, 8)
 
@@ -211,6 +214,9 @@ position = Vector2(56, -40)
 [node name="Box21" parent="Objects" unique_id=1218298196 instance=ExtResource("7_441dj")]
 position = Vector2(-40, 8)
 
+[node name="Box37" parent="Objects" unique_id=781831658 instance=ExtResource("7_441dj")]
+position = Vector2(-56, -24)
+
 [node name="Box22" parent="Objects" unique_id=954570905 instance=ExtResource("7_441dj")]
 position = Vector2(-56, 24)
 
@@ -232,6 +238,9 @@ z_index_offset = -2
 [node name="Barrel" parent="Objects" unique_id=1734294026 instance=ExtResource("9_t4noc")]
 position = Vector2(8, -8)
 
+[node name="Barrel7" parent="Objects" unique_id=923537456 instance=ExtResource("9_t4noc")]
+position = Vector2(-72, -40)
+
 [node name="Barrel3" parent="Objects" unique_id=314444735 instance=ExtResource("9_t4noc")]
 position = Vector2(56, 8)
 
@@ -249,11 +258,6 @@ position = Vector2(-88, 40)
 
 [node name="Passengers" type="Node2D" parent="." unique_id=1031043071]
 position = Vector2(-8, 8)
-
-[node name="Passenger" parent="Passengers" unique_id=1874071934 instance=ExtResource("12_ga44s")]
-position = Vector2(-48, -48)
-passenger_name = "Engineer"
-texture = ExtResource("12_fhu77")
 
 [node name="Passenger2" parent="Passengers" unique_id=1815939541 instance=ExtResource("12_ga44s")]
 position = Vector2(144, 16)

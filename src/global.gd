@@ -8,6 +8,9 @@ extends Node
 @onready var scene_fade: ColorRect = $SceneFade
 
 @onready var tilemap: TileMapLayer = $SubViewportContainer/SubViewport/GlobalTilemap
+@onready var game_over_label: Label = $UI/game_over_label
+@onready var game_over_sound: AudioStreamPlayer = $game_over_sfx
+@onready var main_theme: AudioStreamPlayer = $main_theme
 
 const PLAYER_SCENE: PackedScene = preload("res://src/characters/player.tscn")
 var player: GridNode
@@ -103,7 +106,7 @@ func _ready() -> void:
 	scene_fade.visible = true
 	player = PLAYER_SCENE.instantiate() as GridNode
 	subviewport.add_child(player)
-	change_scene(load("res://src/levels/level1.tscn"), initial_player_spawn_position)
+	change_scene(load("res://src/levels/level2.tscn"), initial_player_spawn_position)
 
 func disable_player_input() -> void:
 	input_disabled = true
@@ -203,3 +206,15 @@ func consume_item(item: InventoryItem) -> bool:
 			return true
 
 	return false
+
+
+func _on_timer_timeout() -> void:
+	main_theme.stop()
+	game_over_sound.play()
+	fade_to_black()
+	game_over_label.visible = true
+	
+	# Wait for the game over audio to finish before restarting
+	await game_over_sound.finished
+	
+	get_tree().reload_current_scene()
