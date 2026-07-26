@@ -107,7 +107,7 @@ func _ready() -> void:
 	scene_fade.visible = true
 	player = PLAYER_SCENE.instantiate() as GridNode
 	subviewport.add_child(player)
-	change_scene(load("res://src/levels/level3.tscn"), initial_player_spawn_position)
+	change_scene(load("res://src/levels/level5.tscn"), initial_player_spawn_position)
 
 func disable_player_input() -> void:
 	input_disabled = true

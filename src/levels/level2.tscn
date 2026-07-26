@@ -80,6 +80,8 @@ script = ExtResource("2_k2dq7")
 
 [node name="RefuelStation" parent="Objects" unique_id=1130668928 instance=ExtResource("5_f08ra")]
 position = Vector2(-216, -40)
+stored_fuel = 100.0
+push_cost = -15.0
 
 [node name="SlidingDoor" parent="Objects" unique_id=1479868204 instance=ExtResource("6_ebaqd")]
 position = Vector2(-248, 8)
@@ -98,6 +100,7 @@ position = Vector2(200, 8)
 [node name="SlidingDoor3" parent="Objects" unique_id=226978572 instance=ExtResource("6_ebaqd")]
 position = Vector2(264, 8)
 open_scene = "res://src/levels/level3.tscn"
+player_spawn_position = Vector2(-232, 8)
 
 [node name="suitcase" parent="Objects" unique_id=1172009491 instance=ExtResource("5_qi72p")]
 position = Vector2(24, 8)
@@ -218,58 +221,49 @@ position = Vector2(216, 40)
 [node name="Passenger" parent="Passengers" unique_id=66109474 instance=ExtResource("5_tppch")]
 position = Vector2(-168, 8)
 is_pushable = true
-is_solid = false
 
 [node name="Passenger2" parent="Passengers" unique_id=136939786 instance=ExtResource("5_tppch")]
 position = Vector2(-88, 8)
 passenger_name = "Prole"
 texture = ExtResource("6_8s5si")
 is_pushable = true
-is_solid = false
 
 [node name="Passenger4" parent="Passengers" unique_id=260435936 instance=ExtResource("5_tppch")]
 position = Vector2(-136, -40)
 texture = ExtResource("7_ovyr1")
 lines_set = "prole_f"
 is_pushable = true
-is_solid = false
 
 [node name="Passenger5" parent="Passengers" unique_id=2081801023 instance=ExtResource("5_tppch")]
 position = Vector2(-136, 24)
 texture = ExtResource("8_ovyr1")
 is_pushable = true
-is_solid = false
 
 [node name="Passenger6" parent="Passengers" unique_id=1820735691 instance=ExtResource("5_tppch")]
 position = Vector2(-72, 40)
 texture = ExtResource("7_ovyr1")
 lines_set = "prole_f"
 is_pushable = true
-is_solid = false
 
 [node name="Passenger8" parent="Passengers" unique_id=695613496 instance=ExtResource("5_tppch")]
 position = Vector2(-24, -8)
 is_pushable = true
-is_solid = false
 
 [node name="Passenger9" parent="Passengers" unique_id=582945211 instance=ExtResource("5_tppch")]
 position = Vector2(56, -8)
 texture = ExtResource("6_8s5si")
 is_pushable = true
-is_solid = false
 
 [node name="Passenger11" parent="Passengers" unique_id=2072936044 instance=ExtResource("5_tppch")]
 position = Vector2(232, -40)
 passenger_name = "Thief"
 texture = ExtResource("10_84a2j")
 is_pushable = true
-is_solid = false
 
 [node name="Passenger10" parent="Passengers" unique_id=510543578 instance=ExtResource("5_tppch")]
 position = Vector2(56, -24)
 texture = ExtResource("8_ovyr1")
 is_pushable = true
-is_solid = false
 
 [node name="Passenger12" parent="Passengers" unique_id=281562281 instance=ExtResource("5_tppch")]
 position = Vector2(56, 40)
@@ -277,14 +271,12 @@ passenger_name = "Officer"
 texture = ExtResource("17_ui3ku")
 lines_set = "police"
 is_pushable = true
-is_solid = false
 
 [node name="Passenger7" parent="Passengers" unique_id=684689612 instance=ExtResource("5_tppch")]
 position = Vector2(-8, -24)
 texture = ExtResource("7_ovyr1")
 lines_set = "prole_f"
 is_pushable = true
-is_solid = false
 
 [node name="Passenger3" parent="Passengers" unique_id=1125052853 instance=ExtResource("5_tppch")]
 position = Vector2(-72, 8)
@@ -292,4 +284,3 @@ passenger_name = "Prosperos"
 texture = ExtResource("7_c8fom")
 lines_set = "prosper_f"
 is_pushable = true
-is_solid = false

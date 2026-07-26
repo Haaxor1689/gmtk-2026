@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://d10awnyfwx1am" path="res://src/objects/sliding_door.tscn" id="9_juu1d"]
 [ext_resource type="PackedScene" uid="uid://b08buc2hp6a2d" path="res://src/objects/table.tscn" id="9_ql4hq"]
 [ext_resource type="PackedScene" uid="uid://cxq400pkk46pf" path="res://src/objects/barrel.tscn" id="10_5lu3u"]
+[ext_resource type="Texture2D" uid="uid://cl4b8kc5e68nb" path="res://assets/sprites/punchcard.png" id="11_ql4hq"]
 
 [node name="Level" type="Node2D" unique_id=300137770]
 
@@ -214,8 +215,10 @@ position = Vector2(24, 40)
 [node name="Barrel3" parent="Objects" unique_id=1098525638 instance=ExtResource("10_5lu3u")]
 position = Vector2(8, 24)
 
-[node name="Punchcard" parent="Objects" unique_id=1618593848 instance=ExtResource("8_ipgu1")]
+[node name="Punch Card" parent="Objects" unique_id=1618593848 instance=ExtResource("8_ipgu1")]
 position = Vector2(-24, 56)
+item_name = "Punch Card"
+item_texture = ExtResource("11_ql4hq")
 
 [node name="People" type="Node2D" parent="." unique_id=601915232]
 
