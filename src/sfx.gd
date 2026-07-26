@@ -4,7 +4,7 @@ const DEFAULT_POOL_SIZE := 8
 
 var box_break: AudioStream = preload("res://assets/sfx/box_break.wav")
 var character_steps: AudioStream = preload("res://assets/sfx/character_steps.wav")
-var disembark: AudioStream = preload("res://assets/sfx/disembark.wav")
+var disembark: AudioStream = preload("res://assets/sfx/Disembark.wav")
 var door_open_sound: AudioStream = preload("res://assets/sfx/door_open_sound.wav")
 var door_shut_sound: AudioStream = preload("res://assets/sfx/door_shut_sound.wav")
 var error_sound: AudioStream = preload("res://assets/sfx/error_sound.wav")
