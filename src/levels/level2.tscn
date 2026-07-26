@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://d4h3sdk8mqos2" path="res://assets/sprites/characters/Bandit_01.png" id="10_84a2j"]
 [ext_resource type="PackedScene" uid="uid://d3wcs6il2qtfn" path="res://src/objects/fragile_box.tscn" id="10_gdtc1"]
 [ext_resource type="PackedScene" uid="uid://cxq400pkk46pf" path="res://src/objects/barrel.tscn" id="11_mgq6v"]
+[ext_resource type="Texture2D" uid="uid://bqdhlihkgiom2" path="res://assets/sprites/characters/Police.png" id="17_ui3ku"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_feg4a"]
 tile_data = PackedInt32Array(0, 2, 0, 65536, 2, 1)
@@ -273,7 +274,8 @@ is_solid = false
 
 [node name="Passenger12" parent="Passengers" unique_id=281562281 instance=ExtResource("5_tppch")]
 position = Vector2(56, 40)
-passenger_name = "Earl"
+passenger_name = "Officer"
+texture = ExtResource("17_ui3ku")
 has_dialog = true
 is_pushable = true
 is_solid = false
