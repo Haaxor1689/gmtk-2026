@@ -97,6 +97,7 @@ position = Vector2(200, 8)
 
 [node name="SlidingDoor3" parent="Objects" unique_id=226978572 instance=ExtResource("6_ebaqd")]
 position = Vector2(264, 8)
+open_scene = "res://src/levels/level3.tscn"
 
 [node name="suitcase" parent="Objects" unique_id=1172009491 instance=ExtResource("5_qi72p")]
 position = Vector2(24, 8)
