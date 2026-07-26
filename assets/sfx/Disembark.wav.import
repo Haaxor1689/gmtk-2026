@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://dy0vec7pfry53"
-path="res://.godot/imported/FailTask.wav-9cf6185fbaefbaaa5bf605ca1a450792.sample"
+uid="uid://btwg3tpeacjmw"
+path="res://.godot/imported/Disembark.wav-3af4c1569f0e5bbc7624865fc91bcfda.sample"
 
 [deps]
 
-source_file="res://assets/sounds/FailTask.wav"
-dest_files=["res://.godot/imported/FailTask.wav-9cf6185fbaefbaaa5bf605ca1a450792.sample"]
+source_file="res://assets/sfx/Disembark.wav"
+dest_files=["res://.godot/imported/Disembark.wav-3af4c1569f0e5bbc7624865fc91bcfda.sample"]
 
 [params]
 
