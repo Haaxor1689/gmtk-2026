@@ -24,6 +24,10 @@ func _ready() -> void:
 		texture = sprite_2d.texture
 	_update_sprite()
 	_update_name_label()
+	if passenger_name == "Prosperos":
+		name_label.position.y -= 5
+	elif passenger_name == "Prole":
+		name_label.position.y += 5
 
 func _update_sprite() -> void:
 	if sprite_2d && texture:

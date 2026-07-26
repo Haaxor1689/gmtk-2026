@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b7jrn3kuobc6a"]
+
+[ext_resource type="Script" uid="uid://d2sw1a8mwu3p2" path="res://src/grid_node.gd" id="1_fsrt0"]
+[ext_resource type="Texture2D" uid="uid://q4umcu00kjby" path="res://assets/sprites/box.png" id="2_ole42"]
+
+[node name="suitcase" type="Node2D" unique_id=1172009491]
+script = ExtResource("1_fsrt0")
+is_pushable = true
+metadata/_custom_type_script = "uid://d2sw1a8mwu3p2"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1510078233]
+position = Vector2(0, -5)
+texture = ExtResource("2_ole42")
